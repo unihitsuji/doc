@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>memo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/gebi.js"></script>
+    <script src="/js/css.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/bgimg.js"></script>
+    <script src="/js/face_onload.js"></script>
+    <script src="/js/trim_code.js"></script>
+    <script src="/js/turn_next.js"></script>
+    <script src="/js/copy.js"></script>
+  </head>
+  <body onload="face_onload(); trim_code();">
+
+    <a target="_blank" href="https://chatgpt.com/">ChatGPT</a>
+    <a target="_blank" href="https://deepai.org/">DeepAI</a>
+    <a href=""></a>
+    <a href=""></a>
+    <a href=""></a>
+    <button onclick="turn_next(this)">／</button>
+    <span class="dangle">
+      <a href="/">／</a>
+      <a href="/index.html">index</a>
+      <a target="_blank" href="/while.html">while</a>
+      <a target="_blank" href="/with.html">with</a>
+      <a target="_top"   href="/face.html">face</a>
+      <a href="/memo.html">memo</a>
+      <a href="/code.html">code</a>
+      <a href="/bgimg-list.html">bgimg-list</a>
+      <br>
+      <a href="/json/">json/</a>
+      <button onclick="turn_next(this)">tinks/</button>
+      <span class="dangle">
+        <a href="/tinks/template.html">template</a>
+        <a href="/tinks/tink.html">tink</a>
+        <a href="/tinks/html-iframe-event/">html-iframe-event</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+    </span>
+    <a href="/tips/">tips/</a>
+    <a href="/tinks/">tinks/</a>
+
+    <br> <!-- ******************** LINE BREAK ******************** -->
+    <button onclick="turn_next(this)">web</button>
+    <span class="dangle">
+      <a href="https://www.tohoho-web.com/html/">html</a>
+      <a href="https://www.tohoho-web.com/css/">css</a>
+      <a href="https://www.tohoho-web.com/js/">javascript</a>
+      <a href="https://ja.javascript.info/">javascript.info</a>
+      <a href="https://developer.mozilla.org/ja/">mdn</a>
+      <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Errors">javascript ｴﾗｰﾘｽﾄ</a>
+      <a href="https://developer.mozilla.org/ja/docs/Web/API">API</a>
+      <a href="https://compat-table.github.io/compat-table/">最新機能とエンジンの対応</a>
+    <a href="https://ja.wikipedia.org/wiki/HTTP%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">HTTPｽﾃｰﾀｽｺｰﾄﾞ</a>
+    <a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers">HTTPﾍｯﾀﾞ</a>
+      <a href="http://web-dou.com/html/t023b.html">HTML特殊文字</a>
+      <a target="_blank" href="https://www.seil.jp/doc/index.html#tool/url-encode.html">URL特殊文字一覧</a>
+      <a href="https://tech-unlimited.com/urlencode.html">URLｴﾝｺｰﾄﾞ&ﾃﾞｺｰﾄﾞ</a>
+      CDN
+      <a href="https://www.jsdelivr.com/">jsdelivr</a>
+      <a href="https://cdnjs.com/">cloudflare</a>
+      <a href="https://unpkg.com/">unpkg</a>
+      ﾗｲﾌﾞﾗﾘ
+      <a href="https://marked.js.org/">marked</a>
+      <a href="https://highlightjs.org/">highlight</a>
+      <hr>
+      html から body にﾃﾞﾌｫﾙﾄで継承されないｽﾀｲﾙﾌﾟﾛﾊﾟﾃｨ<br>
+      background background-color margin padding border width height
+      display position<br>
+      継承されるｽﾀｲﾙﾌﾟﾛﾊﾟﾃｨ<br>
+      color font-family line-height font-weight text-align<br>
+      CSS でルートの font-size を 1rem とするが、それは<br>
+      document.documentElement.style.fontSize である<br>
+      document.body.style.fontSize ではない<br>
+      CSS で body { font-size: inherit; } とすれば一致する
+      <hr>
+      border-radius: 10px 10px 10px 10px;<br>
+      chrome は -webkit-border-radius<br>
+      firefox は -moz-border-radius
+      <hr>
+      改行の制御は
+      white-space: [pre|nowrap];
+      display: [block|table|inline|inline-block|inline-table];
+      <hr>
+      <button onclick="turn_next(this)">真偽の判定</button>
+      <span class="dangle">
+        <pre><code onclick="copy(this.textContent)">
+function is_true_by_if(something) {
+    if (something) { return true; } else { return false; } }
+
+function is_true_by_op(something) {
+    return something ? true : false; }
+
+let u = undefined;
+console.log(`false: ${is_true_by_if(false)}, ${is_true_by_op(false)}`);
+console.log(`0: ${is_true_by_if(0)}, ${is_true_by_op(0)}`);
+console.log(`null: ${is_true_by_if(null)}, ${is_true_by_op(null)}`);
+console.log(`undefined: ${is_true_by_if(u)}, ${is_true_by_op(u)}`);
+console.log(`'': ${is_true_by_if('')}, ${is_true_by_op('')}`);
+console.log(`[]: ${is_true_by_if([])}, ${is_true_by_op([])}`);
+console.log(`{}: ${is_true_by_if({})}, ${is_true_by_op({})}`);
+        </code></pre>
+      </span>
+      <button onclick="turn_next(this)">
+        for in object と for of Array Map</button>
+      <span class="dangle">
+        <pre><code onclick="copy(this.textContent)">
+//  配列 Array
+//let data = Array.of(11, 12, 13);
+let data = [10, 20, 30];          // これも Array
+console.log(data instanceof Array);  // => true
+
+//  辞書 Map
+//  Map は object と異なり、キーを文字列やシンボル以外にできる
+//let data = new Map([ ['x', 101], ['y', 201] ])
+
+//  オブジェクト object
+//  for in は使えるが、for of は使えない
+//let data = { x: 100, y: 200 } // object だが Map ではない
+//console.log(data instanceof Map);  // => false
+
+console.log(typeof data);
+for (let i in data) { console.log(i); }
+for (let i of data) { console.log(i); }
+        </code></pre>
+      </span>
+      <button onclick="turn_next(this)">URL情報</button>
+      <span class="dangle">
+        <pre><code onclick="copy(this.textContent)">
+console.log(`location          = ${location}`);
+console.log(`location.href     = ${location.href}`);
+console.log(`location.protocol = ${location.protocol}`);
+console.log(`location.host     = ${location.host}`);
+console.log(`location.hostname = ${location.hostname}`);
+console.log(`location.port     = ${location.port}`);
+console.log(`location.pathname = ${location.pathname}`);
+console.log(`location.search   = ${location.search}`);   // クエリー文字列
+console.log(`location.hash     = ${location.hash}`);     // アンカー部
+console.log(`location.origin   = ${location.origin}`);   // オリジン
+        </code></pre>
+      </span>
+      <button onclick="turn_next(this)">オブジェクトを調べる</button>
+      <span class="dangle">
+        <pre><code onclick="copy(this.textContent)">
+//  オブジェクトが持つプロパティやメソッドの一覧を整形した文字列で返す
+//  confine = 'function' とするとメソッドに限定される
+function what_is(obj, confine = null) {
+    let ret = `= ${typeof obj}`;
+    let a = new Array();
+    for (let x in obj) { a.push(x); }
+    a.sort();
+    for (let x in a) {
+        let name = a[x];
+        if (! confine || typeof(obj[name]) == confine) {
+            ret += `\n- ${name}: ${typeof obj[name]}`;
+            try {
+                ret += `\n    = ${obj[name]}`;
+            } catch { // プロパティやメソッドへアクセスできない
+                ret += `\n    = ******* Error *******`; } } }
+    return ret; }
+        </code></pre>
+      </span>
+      <a href="js/what_is.js">自作 what_is</a>
+      <hr>
+      Chat GPT に英文テキストを和訳させるプロンプトを作る
+      <a href="/js/chap.js">自作 chap.js</a>
+      <hr>
+      DOM 要素の style オブジェクトからスタイルを取得できないことがある。
+      例えば、次のようなコード
+      <code>docuemt.body.style.backgroundBlendMode</code>
+      DOM 要素の属性は HTML の属性に記述されたものだけを反映する。
+      script タグ内の記述も外部 CSS の記述も反映されない。
+      その場合
+      <code>window.getComputedStyle(document.body).backgroundBlendMode</code>
+      すれば良い
+      <a href="tink-css-blend/b-main.html">tink getComputedStyle</a>
+      <hr>
+      DOM 要素ではなく、タグやクラスに設定されたスタイルを調べる
+      <a href="js/css.js">自作 css.js</a>
+      <a href="tink-css-js/b-main.html">css.js を使ったサンプル</a>
+      コレは link DOM要素の切り替えによるスタイルシート切り替えで、
+      link の onload 時に window.getComputedStyle でも取得できなかった
+      新しいスタイルを取得できた
+      <hr>
+      onload 属性を指定できるのは、body iframe img link script style のみ。
+      それ以外の DOM要素を初期化したいときは body.onload でやれば良い。
+      <hr>
+      link 要素の .href を取得すると、相対パスで指定したのに絶対パスに
+      なっている。指定した相対パスを得たいなら .getAttribute('href) で
+      <hr>
+      link rel="stylesheet" 要素を .disabled = false にすると、
+      ﾌｧｲﾙ単位で指定したｽﾀｲﾙｼｰﾄをオフにできる
+      <hr>
+      計算するなら form input output
+      <a href="tink-html-output/b-main.html">tink output</a>
+      <hr>
+      CORS (Cross-Origin Resource Sharing) により、
+      ﾌﾞﾗｳｻﾞの javascript で異なるｵﾘｼﾞﾝの URL のｿｰｽを取得できない
+      <a href="js/exec_cgi.js">自作 exec_cgi</a>
+      <hr>
+      ﾃﾞﾊﾞｯｶﾞが起動していたら、停止するﾌﾞﾚｰｸﾎﾟｲﾝﾄをｺｰﾄﾞに書ける
+      <pre><code>
+function myFunction() {
+    debugger; // デバッガーが起動していたら、この行で実行が停止
+    /* 残りのコード */ }
+      </code></pre>
+      <hr>
+      &lt;code&gt;〜&lt;/code&gt; で〜を得るには .textContent
+      <hr>
+      select で選択中の option を変えるには
+      select ｵﾌﾞｼﾞｪｸﾄの .value を変えたい option ｵﾌﾞｼﾞｪｸﾄの .value にする
+      <hr>
+      &lt;option value="xxx"&gt;〜&lt;/option&gt; で〜を得るには
+      option ｵﾌﾞｼﾞｪｸﾄの .text
+      <hr>
+      addEventListener で追加されたｲﾍﾞﾝﾄﾊﾝﾄﾞﾗが引数として受け取る
+      ｲﾍﾞﾝﾄｵﾌﾞｼﾞｪｸﾄ ev からｲﾍﾞﾝﾄ発生元の window を得るには ev.view
+      <hr>
+      iframe の .contentDocument から window を得るには .defaultView
+      <hr>
+      イベントプロシージャ内で ev.preventDefault() すると
+      イベントのバブリングを止めることでデフォルトの動作を阻止できるが、
+      あまり使うことはないだろう。
+      TEXTAREA, INPUT type="〜", SELECT ではまず使わない。
+      使うとしたら drop イベントのときだけだろう。
+      <hr>
+      button で drop イベントを検出するには
+      dragover イベントのデフォルト動作を無効にしなければ ならない
+      <a href="tink-html-button/droppable.html">tink droppable</a>
+      <button onclick="turn_next(this)">#</button>
+      <span class="dangle">
+<pre><code>
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;button id="dropButton"&gtDrop Here&lt;/button&gt;
+
+    &lt;script&gt;
+      var button = document.getElementById('dropButton');
+      button.ondragover = function(ev) {
+          ev.preventDefault();
+          ev.dataTransfer.dropEffect = 'move'; };
+      button.ondrop = function(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          alert("Dropped data: " + data); };
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </span>
+      <hr>
+      <button onclick="turn_next(this)">
+        Promise で非同期処理の順を保証する方法</button>
+      <span class="dangle">
+<pre><code>
+// onLast が onReady より先に呼ばれても、
+// onReady の終了を待って onLast を処理したい
+// = heavyObj の準備を待って onLast を処理したい
+let apiResolve;
+let apiPromise = new Promise((r) => { apiResolve = r; });
+
+function onReady(ev) {
+    //  API のロード終了で呼ばれるとする
+    //  API を設定する
+    heavyObj = new 〜;
+    // プロミスを解決してAPI の準備が完了したことを知らせる
+    if (apiResolve) apiResolve(); }
+
+function onLast(ev) {
+    apiPrromise.then(() => {
+        // onReady が終了し API の準備が完了しないと できない処理
+        heavyObj.foo(); });
+    // API の準備が完了しなくても やっていい処理
+    lightObj.bar(); }
+</code></pre>
+      </span>
+      <hr>
+      iframe でイベントリスナーを使うときは
+      contentWindow や contentDocument で addEventListener
+      <a href="tink-html-iframe/parent.html">tink iframe</a>
+      <hr>
+      iframe に .setAttribute('srcdoc', '&lt;h1&gt;Foo&lt;/h1&gt;') した後、
+      .removeAttribute('srcdoc') しないと、
+      .setAttribute('src', url) で iframe に表示できない
+      <hr>
+      iframe 内の HTML に記述された javascript 関数は
+      ifrm.contentWindow.関数名 で呼び出せる
+      <hr>
+      iframe 内が異なるオリジンでもロード終了を検知できる。
+      親で &lt;iframe onload="〜"&gt;&lt;/iframe&gt;
+      <hr>
+      正規表現マッチングは re.exec(str) または str.match(re)、
+      マッチしなければ null、マッチすれば配列を返す。
+      インデックス0はマッチした全体、
+      インデックスn は正規表現 n番目のカッコにマッチした部分
+      <hr>
+      URLのクエリ部は encodeURIComponent(query_string),
+      decodeURIComponent(query_string) せよ
+      <hr>
+      input type="text" の文字列の選択は
+      obj.setSelectionRange(start, end [, direction])
+      <hr>
+      クリップボードへの書込み navigator.clipboard.writeText(str)
+      <hr>
+      クリップボードからの読込み navigator.clipboard.readText()
+      <hr>
+      ダイアログ
+      <a href="tink-html-dialog/modal.html">モーダル</a>
+      <hr>
+    </span>
+
+    <!-- ********************* gauche ********************* -->
+    <button onclick="turn_next(this)">gauche</button>
+    <span class="dangle">
+      <a href="https://practical-scheme.net/gauche/memo-j.html">gauche</a>
+      <a href="https://practical-scheme.net/gauche/man/gauche-refj/Ji-Ben-De-naGou-Wen.html">基本</a>
+      <a href="https://practical-scheme.net/gauche/man/gauche-refj/makuro.html">マクロ</a>
+      <a href="https://practical-scheme.net/gauche/man/gauche-refj/Zu-miIp-miraiburari.html">組み込み</a>
+      <a href="https://practical-scheme.net/gauche/man/gauche-refj/raiburarimoziyuru-_002d-Gai-Yao-.html">ﾗｲﾌﾞﾗﾘ概要</a>
+      <a href="https://practical-scheme.net/gauche/man/gauche-refj/raiburarimoziyuru-_002d-GaucheKuo-Zhang-moziyuru.html">拡張ﾓｼﾞｭｰﾙ</a>
+      <a href="https://practical-scheme.net/gauche/man/gauche-refj/raiburarimoziyuru-_002d-R7RSBiao-Zhun-raiburari.html">R7RS</a>
+      <a href="https://practical-scheme.net/gauche/man/gauche-refj/raiburarimoziyuru-_002d-SRFI.html">SRFI</a>
+      <a href="https://practical-scheme.net/gauche/man/gauche-refj/raiburarimoziyuru-_002d-yuteiritei.html">ﾕｰﾃｨﾘﾃｨ</a>
+    </span>
+    <!-- ********************* python ********************* -->
+    <button onclick="turn_next(this)">python</button>
+    <span class="dangle">
+      ```python3 -m http.server 8888```
+      <a href="https://docs.python.org/ja/3/reference/">python3 和訳</a>
+      <a href="https://pypi.org/">pypi</a>
+      <a href="https://www.youtube.com/@pythonvtuber9917">サプー</a>
+      <button onclick="turn_next(this)">#</button>
+      <span class="dangle">
+        <div><a href=""></a></div>
+        <div><a href=""></a></div>
+        <div><a href=""></a></div>
+      </span>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+      <hr>
+    </span>
+    <!-- ********************* ruby ********************* -->
+    <button onclick="turn_next(this)">ruby</button>
+    <span class="dangle">
+      <a href="https://www.ruby-lang.org/ja/">ruby</a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+      <hr>
+    </span>
+    <!-- ********************* tcl ********************* -->
+    <button onclick="turn_next(this)">tcl</button>
+    <span class="dangle">
+      <a href="https://www.tcl-lang.org/">tcl</a>
+      <a href="https://www.tcl-lang.org/man/tcl9.0/">tcl9.0</a>
+      <a href="https://www.tcl-lang.org/man/tcl8.6/">tcl8.6</a>
+      <a href="https://www.freesoftnet.co.jp/webfiles/tclkits/doc/TclCmdRef/tcl_contents_jp.htm">tcl8.4.1 和訳</a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </span>
+    <button onclick="turn_next(this)">tcl8.6/</button>
+    <span class="dangle">
+      <a href="/tcl8.6/">tcl8.6/</a>
+      <a href="/tcl8.6/template.htm">template</a>
+      <a href="/tcl8.6/UserCmd/tclsh.htm">tclsh</a>
+      <a href="/tcl8.6/UserCmd/wish.htm">wish</a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </span>
+    <!-- ******************** elisp ********************* -->
+    <button onclick="turn_next(this)">elisp</button>
+    <dl class="dangle">
+      <dt><a href="https://ayatakesi.github.io/">emacs elisp 和訳</a></dt>
+      <dd>
+        <a href="/tips/emacs/29.3/elisp-ja.html#Top">29.3/elisp和訳ﾛｰｶﾙ</a>
+      </dd>
+      <dd>
+        <a href="/tips/emacs/elisp29.3-ja.html#Interactive-Codes">
+          interactive</a>
+        interactive 引数指定の文字列
+      </dd>
+      <dt><a href="https://takaxp.github.io/org-ja.html">org-mode</a></dt>
+      <dd>
+        <dl>
+          <dt><a href="https://qiita.com/t4ku/items/315337745c3fa691027c">
+              org-mode 使ってみた</a></dt>
+          <dd>表入力が楽. 数式が描画できる. 画像を差し込める.
+            コードを実行、結果表示できる.</dd>
+        </dl>
+      </dd>
+      <dt><a href="https://kobapan.com/wi/?Emacs%3A%E3%82%AD%E3%83%BC%E3%83%90%E3%82%A4%E3%83%B3%E3%83%89%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%81%AE%E4%BB%95%E6%96%B9">Emacs: ｷｰﾊﾞｲﾝﾄﾞ設定の仕方</a></dt>
+      <dd>
+        (define-key keymap key 'command) や (global-set-key key 'commnd) の
+        key をどのように書くか例を多く記載
+      </dd>
+      <dt><a href="https://nuy.hatenablog.com/entry/2019/12/11/152735">
+          和訳 texinfo</a></dt>
+      <dd>
+        <button onclick="turn_next(this)">インストール手順</button>
+        <span class="dangle">
+          <pre><code>
+$ makeinfo --version
+texi2any (GNU texinfo) 6.8
+
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+$ mkdir emacs29.3
+$ cd emacs29.3
+$ wget https://ayatakesi.github.io/emacs/29.3/emacs-ja.texis.tar.gz
+$ wget https://ayatakesi.github.io/lispref/29.3/elisp-ja.texis.tar.gz
+$ tar zxvf emacs-ja.texis.tar.gz
+$ tar zxvf elisp-ja.texis.tar.gz
+$ cd emacs/japanese_texis
+$ makeinfo --document-language=ja --no-split -o emacs29.3-ja.info emacs-ja.texi
+$ cd ../../lispref/japanese_texis
+$ makeinfo --document-language=ja --no-split -o elisp29.3-ja.info elisp-ja.texi
+modes-ja.texi:3448: warning: @end should only appear at the beginning of a line
+display-ja.texi:4794: warning: @end should only appear at the beginning of a line
+# modes-ja.texi と display-ja.texis で warning 出たけど気にしない
+# emacs で
+# C-u M-x info RET ~/emacs29.3/emacs/japanese_texis/emacs29.3-ja.info
+# C-u M-x info RET ~/emacs29.3/lispref/japanese_texis/elisp29.3-ja.info
+# ~/.emacs.d/init.el に下記を追加
+(setq Info-default-directory-list
+      (append Info-default-directory-list
+              (list (expand-file-name "~/emacs29.3/emacs/japanese_texis/"))))
+
+(setq Info-default-directory-list
+      (append Info-default-directory-list
+              (list (expand-file-name "~/emacs29.3/lispref/japanese_texis/"))))
+
+(defun Info-find-node--info-ja (orig-fn filename &rest args)
+  (apply orig-fn
+         (pcase filename
+           ("emacs" "emacs29.3-ja")
+           ("elisp" "elisp29.3-ja")
+           (t filename))
+         args))
+
+(advice-add 'Info-find-node :around 'Info-find-node--info-ja)
+# emacs を再起動
+# C-h r: Emacs のマニュアル
+# C-h i: インストールされた全マニュアル elisp もココにある
+# C-h F: M-x 〜 コマンドの日本語解説
+# C-h R elisp29.3-ja: 日本語で見れる、C-h R elisp 日本語で見れない
+          </code></pre>
+        </span>
+      </dd>
+      <dt><a href=""></a></dt>
+      <dd></dd>
+      <dt><a href=""></a></dt>
+      <dd></dd>
+
+      <dt>mhtml-mode.el (HTML+)</dt>
+      <dd>
+        /snap/emacs/current/usr/share/emacs/29.4/lisp/textmodes/mhtml-mode.el
+        <table class="keybind">
+          <tr>
+            <td>C-c / <br> C-c &#093; <br> C-c C-e</td>
+            <td>sgml-close-tag</td>
+            <td>現ポイントで直前のタグを閉じる</td>
+          </tr>
+          <tr>
+            <td>C-c DEL <br> (DEL は Backspace) <br> C-c C-d</td>
+            <td>sgml-delete-tag</td>
+            <td>現ポイントのタグを削除</td>
+          </tr>
+          <tr>
+            <td>C-c &lt;left&gt; <br> C-c C-b</td>
+            <td>sgml-skip-tag-backward</td>
+            <td>現ポイントの閉じタグから開きタグの先頭にジャンプ</td>
+          </tr>
+          <tr>
+            <td>C-c &lt;right&gt; <br> C-c C-f</td>
+            <td>sgml-skip-tag-forward</td>
+            <td>現ポイントの開きタグから閉じタグの直後にジャンプ</td>
+          </tr>
+          <tr>
+            <td>C-c C-v</td>
+            <td>browse-url-of-buffer</td>
+            <td>現バッファをブラウザで開く</td>
+        </table>
+      </dd>
+
+      
+    </dl>
+    <button onclick="turn_next(this)">tips/emacs/</button>
+    <span class="dangle">
+      <a href="https://ayatakesi.github.io/">emacs elisp 和訳</a>
+      <a href="/tips/emacs/29.3/elisp-ja.html#Top">29.3/elisp和訳ﾛｰｶﾙ</a>
+      <a href="/tips/emacs/">tips/emacs/</a>
+      <a href="/tips/emacs/README.html">README</a>
+      <a href="/tips/emacs/MEMO.md">MEMO</a>
+    </span>
+
+    <br> <!-- ******************** LINE BREAK ******************** -->
+      <a href="https://ja.wikipedia.org/wiki/%E3%83%8D%E3%83%BC%E3%82%BF%E3%83%BC%E3%81%AE%E5%AE%9A%E7%90%86">ネーターの定理</a>
+    <a href="https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%81%AE%E4%B8%8D%E7%AD%89%E5%BC%8F">ベルの不等式</a>
+    <a href="https://atarimae.biz/archives/19410">微分公式</a>
+    <a href="https://atarimae.biz/archives/22862">積分公式</a>
+    <button onclick="turn_next(this)">#</button>
+    <span class="dangle">
+      <a href="http://119.life.coocan.jp/bungaku/w.html">数の英語表現</a>
+      <a href="https://atubetu.jp/radio/phonetic1/">ﾌｫﾈﾃｨｯｸｺｰﾄﾞ</a>
+      <a href="https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%BD%E3%83%B3%E3%81%AE%E5%87%A1%E4%BF%97%E6%B3%95%E5%89%87">ﾊﾟｰｷﾝｿﾝの凡俗法則</a>
+      <a href="https://navymule9.sakura.ne.jp/020619metometa.html">
+        隠喩metaphorと換喩metonymy</a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+      <hr>
+    </span>
+
+    <br> <!-- ******************** LINE BREAK ******************** -->
+    <a href=""></a>
+    <a href=""></a>
+    <a href=""></a>
+    <button onclick="turn_next(this)">ｽﾆﾍﾟｯﾄ</button>
+    <span class="dangle">
+<pre><code onclick="copy(this.textContent)">
+</code></pre>
+<pre><code onclick="copy(this.textContent)">
+</code></pre>
+<pre><code onclick="copy(this.textContent)">
+</code></pre>
+<pre><code onclick="copy(this.textContent)">
+</code></pre>
+<pre><code onclick="copy(this.textContent)">
+</code></pre>
+    </span>
+
+    <button onclick="turn_next(this)">ﾄﾞﾗｯｸﾞ&ﾄﾞﾛｯﾌﾟ</button>
+    <span class="dangle">
+      <div>
+        <a href="https://www.youtube.com/feed/history">履歴</a>
+        <a href="https://myactivity.google.com/page?utm_source=my-activity&hl=ja&page=youtube_comments">コメント</a>
+        <a href="https://myactivity.google.com/page?utm_source=my-activity&hl=ja&page=youtube_comment_likes">他者のコメントへの評価</a>
+        <a href="https://myactivity.google.com/page?utm_source=my-activity&hl=ja&page=youtube_live_chat">チャット</a>
+        <a href="https://myactivity.google.com/page?utm_source=my-activity&hl=ja&page=youtube_likes">動画への評価</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </div>
+      <div>
+        <a href="https://support.google.com/youtube/answer/171780?hl=ja">
+          ココ</a>
+        で再生リストを埋め込めるように書いてあるが できない(2024-06-06)
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <button onclick="turn_next(this)">ﾃﾞﾚｽﾃ</button>
+      <span class="dangle">
+        <a target="_blank" href="https://x.com/imascg_stage">公式X</a>
+        <a target="_blank" href="https://x.com/cgss_predict">ﾎﾞｰﾀﾞｰ</a>
+        <a href="https://gamerch.com/imascg-slstage-wiki/">gamerch</a>
+        <button onclick="turn_next(this)">#</button>
+        <span class="dangle">
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+        </span>
+        <a href="https://note.com/tossy_xd/n/nfa0c4d32b67e">多重バフGRAND</a>
+        <a href="https://zarazaraazarashi.hatenablog.com/entry/2020/07/02/221730">7,9,11秒の強い曲</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href="/tips/dere/tool.html">計算とか雑記</a>
+      </span>
+
+      <button onclick="turn_next(this)">みこち</button>
+      <div class="dangle">
+        <a target="_blank" href="https://x.com/sakuramiko35">公式</a>
+        <a target="_blank" href="https://x.com/mikochisub">サブ</a>
+        <a href="https://www.youtube.com/@SakuraMiko/streams">みこち</a>
+        <a href="https://www.youtube.com/playlist?list=PLMF8NocLqJttdYeGn8BV3sWLH4sKvleeO">チェック</a>
+        <a href="https://www.youtube.com/playlist?list=PLMF8NocLqJttvrPvco76kkdKZ-WfKJiEL">ライブ</a>
+        <a href="https://www.youtube.com/playlist?list=PLMF8NocLqJttJCIiUCkNXx6jW4dAYfz5G">オリソン</a>
+        <a href="https://www.youtube.com/playlist?list=PLMF8NocLqJttwpDslR5V27BHbr9bzR0IY">コラボのオリソン</a>
+        <a href="https://www.youtube.com/playlist?list=PLMF8NocLqJtubiccXUm9SCZ79dDPSLq2B">カバソン</a>
+        <br>
+        <a href="https://www.youtube.com/playlist?list=PLOn_axV3h9BXAgD6uFscDmVNvUDVS7uaG">{ショート}</a>
+        <a href="https://www.youtube.com/playlist?list=PLOn_axV3h9BUyQ3XvZ5EQA3m_tcvBMXkj">{ホロショート}</a>
+        <a href="https://www.youtube.com/playlist?list=PLOn_axV3h9BUrvAo2L9IrJRgxxxf_WfH8">{切り抜き}</a>
+        <a href="https://www.youtube.com/playlist?list=PLOn_axV3h9BWqS0Pd4d0Kx7wS2VT2ISYG">{切り抜きショート}</a>
+        <a href="https://www.youtube.com/playlist?list=PLOn_axV3h9BX9bEYS1VWRxXanE2hdEL9A">{ピクミン}</a>
+        <a href="https://www.youtube.com/playlist?list=PLOn_axV3h9BW3_brh90CNu7Sg7GFKt8o5">{誕生日}</a>
+        <button onclick="turn_next(this)">#</button>
+        <span class="dangle">
+          <a href="https://youtu.be/V1EE-eRaOFk">2020</a>
+          <a href="https://youtu.be/T142Djb4Jbw">2021</a>
+          <a href="https://youtu.be/abuyCDr3snU">2021</a>
+          <a href="https://youtu.be/YNwLq-sX4l0">2022</a>
+          <a href="https://youtu.be/Cv_2tjVo-p4">2022</a>
+          <a href="https://youtu.be/6ogt4WhsTG4">2022</a>
+          <a href="https://youtu.be/h990JGUfHWw">2023</a>
+          <a href="https://youtu.be/aamLjXnQp5U">2023</a>
+          <a href="https://youtu.be/MO0gz82jGIE">2024</a>
+          <a href="https://youtu.be/5QbfFvgT8OY">2024</a>
+          <a href="https://youtu.be/bUbgUBBpj1s">2024</a>
+          <a href="https://youtu.be/-WACbLhNCJc">2024</a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+        </span>
+        <a href="https://www.youtube.com/playlist?list=PLOn_axV3h9BWRyQu6sxliZqKdO28iLLQF">{マイクラ運動会}</a>
+        <button onclick="turn_next(this)">#</button>
+        <span class="dangle">
+          <a href="https://youtu.be/FNMXvXf1u8M">2020</a>
+          <a href="https://youtu.be/wks67WHSGDw">2021</a>
+          <a href="https://youtu.be/-CzNxQIi87c">2022</a>
+          <a href="https://youtu.be/Nddp-ZlKZtI">2023</a>
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+        </span>
+        <br>
+        <a href="https://www.youtube.com/playlist?list=PLMF8NocLqJtuIQj3-9xOCLmwelfDrNPQD">MGS3</a>
+        <a href="https://www.youtube.com/playlist?list=PLMF8NocLqJtv-ms6ehDf-ZucO_-7QuR2w">ｷｬﾌﾟﾃﾝ翼</a>
+        <a href="https://www.youtube.com/playlist?list=PLMF8NocLqJttjPrfVouzmG6cg6be4x_-0">ナルト</a>
+        <a href="https://www.youtube.com/playlist?list=PLMF8NocLqJttM65zVkvsgwdUJu6pu5xWY">ぼくのなつやすみ4</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <br>
+        <a href="https://youtu.be/iaih7CGee8A">初生2018-08-28(1000人突破)</a>
+        <a href="https://youtu.be/kaB_MdsVayk">でんせつのドラゴン</a>
+        <a href="https://youtu.be/kpjqHbtOadQ&t=11m05s">[んな雪11m05s]</a>
+        <a href="https://youtu.be/Dn0CEh_2tPk&t=25s">んな雪ﾌﾙ25s</a>
+        <a href="https://youtu.be/Dn0CEh_2tPk&t=124s">んな雪ｻﾋﾞ2m04s</a>
+        <a href="https://youtu.be/EfPqqg8VxW4&t=51m39s">
+          [世界はそれを51m39s]</a>
+        <a href="https://youtu.be/G1WPuP8CBG8&t=38m29s">[ｳﾏ娘38m29s]</a>
+        <a href="https://youtu.be/YgPZp0piGPU">{ｳﾏ娘}</a>
+        <a href="https://youtu.be/hYRFLnJTxpQ&t=1h14m55s">[ｳﾏ娘1h14m55s]</a>
+        <a href="https://youtu.be/fBOlcGbBKMo&t=1h42m48s">35Pの推し部屋</a>
+        <a href="https://youtu.be/7ezv8b_H3s8&t=44m">
+          [自分で立て！ﾋｰﾛｰならよぉ！40m]</a>
+        <a href="https://youtu.be/Obebg05wQVE&t=8m33s">
+          {わがった...わがんない8m33s}</a>
+        <a href="https://youtu.be/x3ZNTaJgVlk&t=1h10m37s">
+          [赤ちゃん計画1h10m37s]</a>
+        <a href="https://youtu.be/x3ZNTaJgVlk&t=1h18m30s">[塩漬け1h18m30s]</a>
+        <a href="https://youtu.be/vzPRicPf9PY">{赤ちゃん計画}</a>
+        <a href="https://youtu.be/MGDFXSsQka8">{塩漬け}</a>
+        <a href="https://youtu.be/yhmZuKiLkRI">{ビビデバ1}</a>
+        <a href="https://youtu.be/7T3GsrTASV8">{ビビデバ2}</a>
+        <a href="https://youtu.be/8u666LJ2uu0">みこきゅん</a>
+        <a href="https://youtu.be/KpHw3PATVxo">{ﾎﾛﾌｧｲﾀｰ25人}</a>
+        <a href="https://youtu.be/QwaMyBGvUss">{みこﾁｰ}</a>
+        <a href="https://youtu.be/MO0gz82jGIE&t=36m54s">[りあむ36m54s]</a>
+        <a href="https://youtu.be/MO0gz82jGIE&t=44m53s">[わかった44m53s]</a>
+        <a href="https://youtu.be/wle3fULVMEE">[ﾈﾀﾊﾞﾚが激しすぎるRPG]</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <br>
+        <a href="https://youtu.be/_Qjcg64uf9M">200万人</a>
+        <a href="https://youtu.be/vBQ2Bh5X0zk">みこも持ってるんですけどね</a>
+        <a href="https://youtu.be/qAZyMe5hQqg">35秒探偵</a>
+        <a href="https://youtu.be/t1gY5Hqi4u4">しゅば〜るでいず</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <br>
+        <a href="images/miko/">画像フォルダ</a>
+        <button onclick="turn_next(this)">#</button>
+        <span class="dangle">
+          <img width="50%" src="images/miko/2023-09-PC.png">
+          <br>
+          <img width="50%" src="images/miko/sleep-with-taiyaki.webp">
+        </span>
+      </div>
+
+      <button onclick="turn_next(this)">ねね</button>
+      <span class="dangle">
+        <a href="https://www.youtube.com/@MomosuzuNene">桃鈴ねね</a>
+        <a href="https://ja.wikipedia.org/wiki/%E6%A1%83%E9%88%B4%E3%81%AD%E3%81%AD">Wikipedia</a>
+        <a href="https://www.youtube.com/@user-fc4kz6mv4t">ばばなつみ</a>
+        <a href="https://youtu.be/ervOm4M3uOA">{ｹﾞｰﾑしたいねっ子}</a>
+        <a href="https://youtu.be/Dux2lXy5MHE">{ｴｺﾞｻ}</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+
+      <button onclick="turn_next(this)">はじめ</button>
+      <span class="dangle">
+        <a href="https://www.youtube.com/@TodorokiHajime">轟はじめ</a>
+        <a href="https://youtu.be/W5Hj8KIMgLs&t=22s">{ﾒﾗﾄﾆﾝ ﾁﾙﾗｯﾌﾟ}</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+
+      <button onclick="turn_next(this)">ころね</button>
+      <span class="dangle">
+        <a href="https://www.youtube.com/@InugamiKorone">戌神ころね</a>
+        <a href="https://ja.wikipedia.org/wiki/%E6%88%8C%E7%A5%9E%E3%81%93%E3%82%8D%E3%81%AD">Wikipedia</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+
+      <button onclick="turn_next(this)">おかゆ</button>
+      <span class="dangle">
+        <a href="https://www.youtube.com/@NekomataOkayu">猫又おかゆ</a>
+        <a href="https://ja.wikipedia.org/wiki/%E7%8C%AB%E5%8F%88%E3%81%8A%E3%81%8B%E3%82%86">Wikipedia</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+
+      <button onclick="turn_next(this)">マリン</button>
+      <span class="dangle">
+        <a href="https://www.youtube.com/@HoushouMarine">宝鐘マリン</a>
+        <a href="https://ja.wikipedia.org/wiki/%E5%AE%9D%E9%90%98%E3%83%9E%E3%83%AA%E3%83%B3">Wikipedia</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+
+      <button onclick="turn_next(this)">ルーナ</button>
+      <span class="dangle">
+        <a href="https://www.youtube.com/@HimemoriLuna">姫森ルーナ</a>
+        <a href="https://ja.wikipedia.org/wiki/%E5%A7%AB%E6%A3%AE%E3%83%AB%E3%83%BC%E3%83%8A">Wikipedia</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+
+      <button onclick="turn_next(this)">ホロ</button>
+      <span class="dangle">
+        <a href="https://www.youtube.com/@hololive">ホロライブ</a>
+        <a href="https://hololivepro.com/#top_talent">公式サイト</a>
+        <a href="https://ja.wikipedia.org/wiki/%E3%83%9B%E3%83%AD%E3%83%A9%E3%82%A4%E3%83%96%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">Wikipedia</a>
+        <a href="https://trackholo.live/">登録者数</a>
+        <a href="https://tkgames.jp/holo_watermelon.html">ホロのスイカ</a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+
+      <button onclick="turn_next(this)">その他</button>
+      <span class="dangle">
+        <a href="https://www.youtube.com/playlist?list=PLOn_axV3h9BWrhZ_KNF5HzSmJc5SXPX-D">{VTuber}</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </span>
+
+    </span>
+
+  </body>
+</html>

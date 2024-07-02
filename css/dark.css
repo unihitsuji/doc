@@ -1,0 +1,59 @@
+.has-onclick { box-shadow: 5px 5px 5px rgb(0, 255, 0, 0.3); }
+
+.dangle {
+    background-color: rgb(0, 0, 40, 0.6);
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px; }
+
+.en, .enx { color: rgb(255 255 255); }
+.ja, .jax { color: rgb(  0 255 255); }
+
+.menu { background-color: rgb(0, 0, 40, 0.7); }
+
+body { color: rgb(255 255 255);
+       background-color: rgb(0, 0, 40, 0.7); }
+
+table, code, textarea, output, input, select, button {
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px; }
+
+output, input, select, button {    color: rgb(0 0 0);
+                           background-color: rgb(128 128 192); }
+
+pre > code, textarea {     color: rgb(255 255 255);
+                           background-color: rgb(0, 0, 40, 0.7); }
+
+table.md {                 color: rgb(255 255 255);
+                           background-color: rgb(0, 0, 40, 0.7); }
+
+table.md td, table.md th { border-color: yellow; }
+
+a:visited {
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    color: rgb(0 0 223);                /* 青 */
+    background-color: rgb(223 95 191);  /* 紫 */ }
+
+.visited {
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    color: rgb(0 0 223);
+    background-color: rgb(223 95 191); }
+
+a:link {
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    color: rgb(223 95 31);            /* 赤 */
+    background-color: rgb(95 31 95);  /* 暗い紫 */ }
+
+.link {
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    color: rgb(223 95 31);            /* 赤 */
+    background-color: rgb(95 31 95);  /* 暗い紫 */ }

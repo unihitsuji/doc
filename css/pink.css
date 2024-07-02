@@ -1,0 +1,60 @@
+.has-onclick { box-shadow: 5px 5px 5px rgb(0, 255, 0, 0.3); }
+
+.dangle {
+    background-color: rgb(255, 223, 255, 0.7);
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px; }
+
+.en, .enx { color: rgb(  0   0   0); }
+.ja, .jax { color: rgb(  0  63 255); }
+
+.menu { background-color: rgb(223, 191, 223, 0.7); }
+
+body { color: rgb(0 0 0);
+       background-color: rgb(223, 191, 223, 0.7); /* 明るい */ }
+
+table, code, textarea, output, input, select, button {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px; }
+
+output, input, select, button {    color: rgb(0 0 0);
+                           background-color: rgb(255 191 255); }
+
+pre > code, textarea {     color: rgb(0 0 0);
+                           background-color: rgb(255, 223, 255, 0.7); }
+
+table.md {                 color: rgb(0 0 0);
+                           background-color: rgb(255, 223, 255, 0.7); }
+
+table.md td, table.md th { border-color: red; }
+
+a:visited {
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    color: rgb(191 0 191);              /* 紫 */
+    background-color: rgb(255 191 255); /* ピンク */
+}
+.visited {
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    color: rgb(191 0 191);
+    background-color: rgb(255 191 255);
+}
+a:link {
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    color: rgb(0 0 223);                /* 青 */
+    background-color: rgb(191 191 255); /* 水色 */
+}
+.link {
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    color: rgb(0 0 223);
+    background-color: rgb(191 191 255);
+}

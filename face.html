@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>face</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+    <link id="bgimgcss" rel="stylesheet" href="/images/city/night1.css">
+
+    <script src="/js/gebi.js"></script>
+    <script src="/js/attr.js"></script>
+    <script src="/js/prop.js"></script>
+    <script src="/js/css.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/bgimg.js"></script>
+    <script src="/js/face_onload.js"></script>
+  </head>
+  <body onload="face_onload(true)">
+
+    <table>
+      <tr>
+        <td>
+          <!-- ******* FACE START ********************* -->
+          <select id="bgimg" onchange="push_cookie(this, bgimg())">
+            <option value="">off</option>
+            <option value="/images/city/evening.css">- evening</option>
+            <option value="/images/city/freepik-rainy.css">rainy</option>
+            <option value="/images/city/morning.css">- moring</option>
+            <option value="/images/city/new-york1.css">- new-york1</option>
+            <option value="/images/city/new-york2.css">- new-york2</option>
+            <option value="/images/city/new-york3.css">- new-york3</option>
+            <option value="/images/city/night1.css">night1 screen</option>
+            <option value="/images/city/night2.css">- night2</option>
+            <option value="/images/city/pink.css">- pink</option>
+            <option value="/images/city/river-side1.css">- river-side1</option>
+            <option value="/images/city/river-side2.css">- river-side2</option>
+            <option value="/images/city/see-down.css">- see-down</option>
+            <option value="/images/city/sendai.css">sendai luminosity</option>
+            <option value="/images/city/shibuya.css">- shibuya</option>
+            <option value="/images/city/with-woods.css">woods diff</option>
+            <option value="/images/room/with-pc.css">with pc</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+          <select id="blend" onchange="push_cookie(this, blend)">
+            <option value="normal">normal</option>
+            <option value="multiply">multiply</option>
+            <option value="screen">screen</option>
+            <option value="overlay">overlay</option>
+            <option value="darken">darken</option>
+            <option value="lighten">lighten</option>
+            <option value="color-dodge">color-dodge</option>
+            <option value="color-burn">color-burn</option>
+            <option value="hard-light">hard-light</option>
+            <option value="soft-light">soft-light</option>
+            <option value="difference">difference</option>
+            <option value="exclusion">exclusion</option>
+            <option value="hue">hue</option>
+            <option value="saturation">saturation</option>
+            <option value="color">color</option>
+            <option value="luminosity">luminosity</option>
+          </select>
+          <select id="theme"
+                  onchange="push_cookie(this, theme())">
+            <option value="">off</option>
+            <option value="/css/dark.css">DARK</option>
+            <option value="/css/pink.css">PINK</option>
+          </select>
+          <!-- ******* FACE END ********************* -->
+          <a href="/bgimg-list.html">bgimg-list</a>
+          <a href="/while.html">while</a>
+          <a href="/with.html">with</a>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>

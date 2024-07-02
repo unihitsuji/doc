@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>star-wars</title>
+    <script>
+
+let iframeResolve = null;
+let iframePromise = new Promise( (r) => { iframeResolve = r; } );
+let linkResolve   = null;
+let linkPromise   = new Promise( (r) => { linkResolve   = r; } );
+let scriptResolve = null;
+let scriptPromise = new Promise( (r) => { scriptResolve = r; } );
+
+function iframe_onscroll(ev) {
+    console.log(`iframe_onscroll: ${ev.target.id}`);
+    let top = ev.target.body.scrollTop;
+    let scr = ev.target.getElementById('scr');
+    console.log(`iframe_onscroll: ${top} / ${scr.height}`); }
+
+function iframe_onload(ev) {
+    ev.target.contentDocument.addEventListener('scroll', iframe_onscroll);
+    if (iframeResolve) iframeResolve();
+    console.log(`iframe_onload: `); }
+
+function link_onload(ev) {
+    if (linkResolve) linkResolve();
+    console.log(`link_onload: `); }
+
+function script_onload(ev) {
+    if (scriptResolve) scriptResolve();
+    console.log(`script_onload: `); }
+
+addEventListener( 'DOMContentLoaded', (ev) => {
+    let pop_ext = () => {
+        let url = document.documentURI;
+        let sep = url.lastIndexOf('/');
+        let dot = url.lastIndexOf('.');
+        return ( 0 <= dot && sep < dot ) ?
+            url.substring(0, dot) : url; };
+    let pop = pop_ext();
+    let lnk = document.createElement('link');
+    lnk.setAttribute('rel', 'stylesheet');
+    lnk.setAttribute('href', `${pop}.css`);
+    lnk.addEventListener( 'load', link_onload );
+    document.head.appendChild(lnk);
+    let scr = document.createElement('script');
+    scr.setAttribute('src', `${pop}.js`);
+    scr.addEventListener( 'load', script_onload );
+    document.head.appendChild(scr);
+    let option = { bubbles: true, canceled: true };
+    let ps = [linkPromise, scriptPromise, iframePromise];
+    Promise.all( ps ).then( (r) => {
+        console.log(`all promise resolved`);
+        let line = document.getElementById('line');
+        line.addEventListener('change', line_onchange);
+        let persp = document.getElementById('persp');
+        persp.addEventListener('change', persp_onchange);
+        let angle = document.getElementById('angle');
+        angle.addEventListener('change', angle_onchange);
+        let epi = document.getElementById('epi');
+        epi.addEventListener( 'change', select_onchange );
+        let epev = new Event('change', option);
+        epi.dispatchEvent(epev);
+        let text = document.getElementById('text');
+        text.addEventListener( 'input', text_oninput );
+        let txev = new Event('input', option);
+        text.dispatchEvent(txev); } );
+    document.getElementById('html').setAttribute('href', `${pop}.txt`);
+    document.getElementById('css').setAttribute('href', `${pop}.css`);
+    document.getElementById('js').setAttribute('href', `${pop}.js`); } );
+
+    </script>
+  </head>
+  <body>
+
+    <h1>star-wars</h1>
+
+    <iframe id="ifrm" src="screen.html" onload="iframe_onload(event)"
+            width="535px" height="300px"></iframe>
+    <br>
+    <label for="epi">文章</label>
+    <select id="epi">
+      <option value="ep1">ep. 1</option>
+      <option value="ep4" selected>ep. 4</option>
+    </select>
+    <label for="persp">遠近感</label>
+    <input id="persp" type="number" min="0" max="535" value="300">
+    <label for="angle">角度</label>
+    <input id="angle" type="number" min="0" max="90"  value="50">
+    <input id="line" type="range" min="0" max="10" value="0">
+    <button id="play" onclick="play_onclick(event)">PLAY</button>
+    <button id="stop" onclick="stop_onclick(event)">STOP</button>
+    <br>
+    <textarea id="text" cols="80" rows="10"></textarea>
+
+    <hr>
+
+    <ul>
+      <li><a id="html">html</a> <a id="css">css</a> <a id="js">js</a></li>
+      <li></li>
+    </ul>
+
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>code</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/gebi.js"></script>
+    <script src="/js/attr.js"></script>
+    <script src="/js/prop.js"></script>
+    <script src="/js/css.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/bgimg.js"></script>
+    <script src="/js/face_onload.js"></script>
+    <script src="/js/trim_code.js"></script>
+    <script src="/js/turn.js"></script>
+    <script src="/js/turn_next.js"></script>
+    <script src="/js/turn_spec.js"></script>
+    <script src="/js/enclose_body.js"></script>
+    <script src="/js/exec_code.js"></script>
+    <script src="/js/chap.js"></script>
+    <script src="/js/what_is.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+      table { margin: 0px; padding: 0px; border-style: none; }
+      body  { margin: 2px; }
+    </style>
+
+    <script>
+
+      function button_onclick(ev) {
+          let reset = ev.target.getAttribute('data-reset');
+          if (ev.target.id == 'chap') {
+              chap(); }
+          else if (ev.target.id == 'exec') {
+              exec_code(); }
+          else if ( reset ) {
+              let t = document.getElementById(reset);
+              navigator.clipboard.writeText(t.value);
+              t.value = ''; } }
+
+      function onload(ev) {
+          let xs = Array.from( document.getElementsByTagName('button') );
+          for (let x of xs)
+              if (! x.onclick )
+                  x.addEventListener( 'click', button_onclick); }
+
+    </script>
+  </head>
+  <body onload="face_onload(); pull_cookie('lang'); onload(event);">
+
+    <table>
+      <tr>
+        <td class="right">
+          <button id="chap">CHAP</button>
+          <select id="lang" onchange="push_cookie(this)">
+            <option value="markdown">markdown</option>
+            <option value="html">html</option>
+            <option value="javascript">javascript</option>
+            <option value="Javascript">javascript console.log</option>
+            <option value="gosh">scheme gauche</option>
+            <option value="python3">python3</option>
+            <option value="ruby">ruby</option>
+            <option value="tclsh">tcl</option>
+          </select>
+          <button id="exec">EXEC</button>
+          <button data-reset="code">RESET</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="center">
+          <!-- font-size: small 89文字 medium 82文字 large  67文字 -->
+          <textarea id="code" cols="82" rows="18"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td class="right">
+          <button data-reset="inp">RESET</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="center">
+          <textarea id="inp" cols="82" rows="6"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td class="right">
+          <button data-reset="out">RESET</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="center">
+          <textarea id="out" cols="82" rows="6"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td class="right">
+          <button data-reset="err">RESET</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="center">
+          <textarea id="err" cols="82" rows="6"></textarea>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>

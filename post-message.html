@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>post-message</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <script>
+
+      function to_parent(kind, data) {
+          const unparsed = JSON.stringify( { "kind": kind, "data": data } );
+          window.parent.postMessage(unparsed, '*'); }
+
+      function button_onclick(ev) {
+          to_parent('foo', { bar: "Hello", baz: "world" } ); }
+
+      function onload(ev) {
+          if (window !== window.parent) // iframe 内のときだけ
+              to_parent( "foo", { "bar": "BAR", "baz": "BAZ" } ); }
+
+    </script>
+  </head>
+  <body onload="onload(event)">
+
+    <h1><a href="/index.html">index</a></h1>
+
+    <h1 class="inline">
+      <a href="post-message.txt">post-message</a>
+    </h1>
+    <button id="bt1" onclick="button_onclick(event)">
+      post message to parent
+    </button>
+
+  </body>
+</html>

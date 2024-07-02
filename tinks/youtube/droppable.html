@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Iframe Drag and Drop</title>
+    <style>
+        iframe {
+            width: 640px;
+            height: 360px;
+            border: 2px dashed #ccc;
+        }
+        iframe.dragover {
+            border-color: #000;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="youtubePlayer" src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+
+    <script>
+        const iframe = document.getElementById('youtubePlayer');
+
+        iframe.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            iframe.classList.add('dragover');
+        });
+
+        iframe.addEventListener('dragleave', (event) => {
+            event.preventDefault();
+            iframe.classList.remove('dragover');
+        });
+
+        iframe.addEventListener('drop', (event) => {
+            event.preventDefault();
+            iframe.classList.remove('dragover');
+
+            const data = event.dataTransfer.getData('text');
+            const videoId = data.split('v=')[1];
+            alert(`hello ${data}`);
+            iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        });
+    </script>
+    <a href="https://youtu.be/kpjqHbtOadQ&t=11m05s">みこち</a>
+</body>
+</html>

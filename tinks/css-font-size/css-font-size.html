@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-font-size</title>
+    <script>
+
+addEventListener( 'DOMContentLoaded', (ev) => {
+    let pop_ext = () => {
+        let url = document.documentURI;
+        let sep = url.lastIndexOf('/');
+        let dot = url.lastIndexOf('.');
+        return ( 0 <= dot && sep < dot ) ?
+            url.substring(0, dot) : url; };
+    let pop = pop_ext();
+    document.getElementById('html').setAttribute('href', `${pop}.txt`);
+    document.getElementById('css').setAttribute('href', `${pop}.css`);
+    document.getElementById('js').setAttribute('href', `${pop}.js`);
+    let lnk = document.createElement('link');
+    lnk.setAttribute('rel', 'stylesheet');
+    lnk.setAttribute('href', `${pop}.css`);
+    document.head.appendChild(lnk);
+    let scr = document.createElement('script');
+    scr.setAttribute('src', `${pop}.js`);
+    document.head.appendChild(scr); } );
+
+function button_onclick(ev) {
+    console.log(`button_onclick: `);
+    let style = window.getComputedStyle(ev.target.parentElement);
+    ev.target.textContent = `style.fontSize =${style.fontSize}`; }
+
+    </script>
+  </head>
+  <body>
+
+    <h1>css-font-size</h1>
+
+    <div>default
+      <button onclick="button_onclick(event)">? px</button></div>
+    <div class="xx-small">xx-small
+      <button onclick="button_onclick(event)">? px</button></div>
+    <div class="x-small">x-small
+      <button onclick="button_onclick(event)">? px</button></div>
+    <div class="small">small
+      <button onclick="button_onclick(event)">? px</button></div>
+    <div class="medium">medium
+      <button onclick="button_onclick(event)">? px</button></div>
+    <div class="large">large
+      <button onclick="button_onclick(event)">? px</button></div>
+    <div class="x-large">x-large
+      <button onclick="button_onclick(event)">? px</button></div>
+    <div class="xx-large">xx-large
+      <button onclick="button_onclick(event)">? px</button></div>
+
+    <ul>
+      <li>
+        <a id="html">html</a>
+        <a id="css">css</a>
+        <a id="js">javascript</a>
+      </li>
+      <li>
+        以下の二通りの状況で見た目がそこそこになるよう
+        CSS だけで対応する手段を確立したい
+        <ul>
+          <li>単独で表示される</li>
+          <li>iframe 内で表示され同じオリジンの親から
+            document.body.style.fontSize を変更される</li>
+        </ul>
+      </li>
+    </ul>
+
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>background-blend-mode test</title>
+    <link rel="stylesheet" href="a-base.css">
+    <link rel="stylesheet" href="a-overlap.css">
+    <style>
+      div { width: 600px;
+            margin: 33px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgb(20, 20, 20, 0.7); }
+    </style>
+    <script>
+      function onload() {
+        let obj = window.getComputedStyle(document.body)
+        let val = obj.backgroundBlendMode;
+        let msg = `val = ${val}: ${typeof val}`;
+        console.log(msg);
+        alert(msg);
+      }
+    </script>
+  </head>
+  <body onload="onload()">
+    <div>
+document.body.style.backgroundBlendMode の値を取得したいが、
+body.onload の段階では、値がない。
+    </div>
+    <div>
+window.getComputedStyle(document.body) を
+.backgroundBlendMode で値を取得できる
+    </div>
+    <div>
+DOM 要素の style 属性の設定 (例えば △△.style.display = 〜;) は
+属性の値として反映され、その後 (例えば let x = △△.style.display で)
+値を取得できる。
+    </div>
+    <div>
+△△.style.□□ は HTML のタグに記述されたものしか保持していない。
+javascript から設定すれば保持できる。
+しかし、style タグ内の指定や外部 CSS による設定は保持していない。
+    </div>
+    <div>
+ここから ただの推測:
+HTML パーサは DOM ツリーの作成に専念し、
+style 属性、style タグ、
+外部 CSS の指定 &lt;link rel="stylesheet" href="〜"&gt; に
+出くわすと CSS パーサに丸投げする。
+javascript からの操作は DOM要素の属性 style オブジェクト を通じて行う。
+HTML, CSS, javascript の関係について少しだけ詳しくなれた、気がする
+    </div>
+  </body>
+</html>
+

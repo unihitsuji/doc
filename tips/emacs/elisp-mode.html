@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>elisp-mode</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/trim_code.js"></script>
+    <script src="/js/turn.js"></script>
+  </head>
+  <body onload="read_cookie('theme', theme()); trim_code();">
+    <div class="top-right-menu">
+      <button onclick="turn(this, '.en', turn_inline)">英文</button>
+      <button onclick="turn(this, '.ja', turn_inline)">訳文</button>
+    </div>
+
+    <h1>elisp-mode (ELisp): C-h m =&gt; *Help*</h1>
+
+    <span class="en">
+      Minor modes enabled in this buffer:
+    </span>
+    <span class="ja">
+      このバッファで有効なマイナーモード:
+    </span>
+    <code>Auto-Save</code> <code>Eldoc</code> <code>Font-Lock</code>
+    <br><br>
+
+    <span class="en">
+      The major mode is <code>ELisp/l</code> mode defined in
+    </span>
+    <span class="ja">
+      メジャーモードは <code>ELisp/l</code> モードで、以下で定義されています
+    </span>
+    <code>/snap/emacs/2464/usr/share/emacs/29.3/lisp/progmodes/elisp-mode.el</code>:
+    <br><br>
+
+    <span class="en">
+      Major mode for editing <code>Lisp</code> code to run in
+      <code>Emacs</code>.
+    </span>
+    <span class="ja">
+      <code>Emacs</code> で実行する <code>Lisp</code> コードを編集するための
+      メジャーモードです。
+    </span>
+    <br>
+    Command:
+    <span class="en">
+      Delete converts tabs to spaces as it moves back.
+    </span>
+    <span class="ja">
+      タブを削除しながら後ろに移動します。
+    </span>
+    <span class="en">
+      Blank lines separate paragraphs.
+    </span>
+    <span class="ja">
+      空行は段落を区切ります。
+    </span>
+    <span class="en">
+      Semicolons start comments.
+    </span>
+    <span class="ja">
+      セミコロンはコメントを開始します。
+    </span>
+    <br><br>
+
+    <span class="en">
+      When editing <code>Lisp</code> data (as opposed to code),
+      <code>lisp-data-mode</code> can be used instead.
+    </span>
+    <span class="ja">
+      <code>Lisp</code> データ（コードではなく）を編集する場合は、
+      代わりに <code>lisp-data-mode</code> を使用することができます。
+    </span>
+    <br><br>
+
+    <table class="md">
+      <thead>
+        <tr>
+          <th align="left"><code>Key</code></th>
+          <th align="left"><code>Binding</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left"><code>DEL</code></td>
+          <td align="left"><code>backward-delete-char-untabify</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-c C-b</code></td>
+          <td align="left"><code>elisp-byte-compile-buffer</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-c C-e</code></td>
+          <td align="left"><code>elisp-eval-region-or-buffer</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-c C-f</code></td>
+          <td align="left"><code>elisp-byte-compile-file</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-M-i</code></td>
+          <td align="left"><code>completion-at-point</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-M-q</code></td>
+          <td align="left"><code>indent-pp-sexp</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-M-x</code></td>
+          <td align="left"><code>eval-defun</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-M-q</code></td>
+          <td align="left">
+            <code>indent-sexp</code> <br>
+            (this binding is currently shadowed)
+          </td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-M-q</code></td>
+          <td align="left">
+            <code>prog-indent-sexp</code> <br>
+            (this binding is currently shadowed)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+    <span class="en">
+      In addition to any hooks its parent mode might have run,
+      this mode runs the hook <code>emacs-lisp-mode-hook</code>,
+      as the final or penultimate step during initialization.
+    </span>
+    <span class="ja">
+      親モードが実行するフックに加えて、このモードは初期化の最終または
+      最後の前のステップとして <code>emacs-lisp-mode-hook</code> を実行します。
+    </span>
+    <span class="en">
+      Other commands for this mode, not bound to any keys:
+    </span>
+    <span class="ja">
+      このモードの他のコマンドで、キーにバインドされていないもの:
+    </span>
+    <br><br>
+
+    <code>checkdoc</code> <br>
+    <code>checkdoc-comments</code> <br>
+    <code>checkdoc-continue</code> <br>
+    <code>checkdoc-current-buffer</code> <br>
+    <code>checkdoc-interactive</code> <br>
+    <code>checkdoc-message-interactive</code> <br>
+    <code>checkdoc-message-text</code> <br>
+    <code>checkdoc-rogue-spaces</code> <br>
+    <code>checkdoc-start</code> <br>
+    <code>emacs-lisp-byte-compile</code> <br>
+    <code>emacs-lisp-byte-compile-and-load</code> <br>
+    <code>emacs-lisp-native-compile</code> <br>
+    <code>emacs-lisp-native-compile-and-load</code>
+    <br><br>
+
+    <span class="en">Global minor modes enabled:</span>
+    <span class="ja">有効なグローバルマイナーモード:</span>
+    <code>Auto-Encryption</code> <code>Blink-Cursor</code>
+    <code>Column-Number</code> <code>Desktop-Save</code>
+    <code>Electric-Indent</code> <code>File-Name-Shadow</code>
+    <code>Global-Eldoc</code> <code>Global-Font-Lock</code>
+    <code>Line-Number</code> <code>Show-Paren</code>
+    <code>Tooltip</code> <code>Transient-Mark</code>
+
+  </body>
+</html>

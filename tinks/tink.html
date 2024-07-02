@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+
+addEventListener( 'DOMContentLoaded', (ev) => {
+    let pop_ext = () => {
+        let url = document.documentURI;
+        let sep = url.lastIndexOf('/');
+        let dot = url.lastIndexOf('.');
+        return ( 0 <= dot && sep < dot ) ?
+            url.substring(0, dot) : url; };
+    let pop = pop_ext();
+    document.getElementById('html').setAttribute('href', `${pop}.txt`);
+    document.getElementById('css').setAttribute('href', `${pop}.css`);
+    document.getElementById('js').setAttribute('href', `${pop}.js`);
+    let lnk = document.createElement('link');
+    lnk.setAttribute('rel', 'stylesheet');
+    lnk.setAttribute('href', `${pop}.css`);
+    document.head.appendChild(lnk);
+    let scr = document.createElement('script');
+    scr.setAttribute('src', `${pop}.js`);
+    document.head.appendChild(scr); } );
+
+    </script>
+  </head>
+  <body>
+
+    <h1></h1>
+
+    <hr>
+
+    <ul>
+      <li>
+        <a id="html">html</a>
+        <a id="css">css</a>
+        <a id="js">javascript</a>
+      </li>
+      <li></li>
+    </ul>
+
+  </body>
+</html>

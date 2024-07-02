@@ -1,0 +1,148 @@
+<html lang="ja">
+  <head>
+    <title>scheme-mode</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="basecss" rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/trim_code.js"></script>
+    <script src="/js/turn.js"></script>
+  </head>
+  <body onload="read_cookie('theme', theme()); trim_code();">
+    <div class="top-right-menu">
+      <button onclick="turn(this, '.en', turn_inline)">英文</button>
+      <button onclick="turn(this, '.ja', turn_inline)">訳文</button>
+    </div>
+
+    <h1>scheme-mode (Scheme): C-h m =&gt; *Help*</h1>
+
+    <span class="en">
+      Minor modes enabled in this buffer:
+      <code>Auto-Save</code> <code>Font-Lock</code>
+    </span>
+    <span class="ja">
+      このバッファで有効なマイナーモード:
+      <code>Auto-Save</code> <code>Font-Lock</code>
+    </span>
+    <br><br>
+    <span class="en">
+      The major mode is <code>Scheme</code> mode
+      defined in <code>scheme.el</code>:
+    </span>
+    <span class="ja">
+      メジャーモードは <code>scheme.el</code> で定義された
+      <code>Scheme</code> モードです:
+    </span>
+    <br><br>
+    <span class="en">
+      Major mode for editing <code>Scheme</code> code.
+    </span>
+    <span class="ja">
+      <code>Scheme</code> コードを編集するためのメジャーモードです。
+    </span>
+    <span class="en">
+      Editing commands are similar to those of <code>lisp-mode</code>.
+    </span>
+    <span class="ja">
+      編集コマンドは <code>lisp-mode</code> と似ています。
+    </span>
+    <span class="en">
+      In addition, if an inferior <code>Scheme</code> process
+      is running, some additional commands will be defined,
+      for evaluating expressions and controlling the interpreter,
+      and the state of the process will be displayed in the
+      mode line of all <code>Scheme</code> buffers.
+    </span>
+    <span class="ja">
+      さらに、下位の <code>Scheme</code> プロセスが実行されている場合、
+      式の評価やインタープリタの制御のための追加コマンドが定義され、
+      プロセスの状態がすべての <code>Scheme</code> バッファのモードラインに
+      表示されます。
+    </span>
+    <span class="en">
+      The names of commands that interact with the <code>Scheme</code>
+      process start with "xscheme-" if you use the MIT Scheme-specific
+      <code>xscheme</code> package; for more information see the
+      documentation for <code>xscheme-interaction-mode</code>.
+    </span>
+    <span class="ja">
+      MIT Scheme 固有の <code>xscheme</code> パッケージを使用する場合、
+      <code>Scheme</code> プロセスと対話するコマンドの名前は
+      "xscheme-" で始まります。
+      詳細については <code>xscheme-interaction-mode</code> のドキュメントを
+      参照してください。
+    </span>
+    <span class="en">
+      Use <code>M-x run-scheme</code> to start an inferior
+      <code>Scheme</code> using the more general
+      <code>cmuscheme</code> package.
+    </span>
+    <span class="ja">
+      より一般的な <code>cmuscheme</code> パッケージを使用して
+      下位の <code>Scheme</code> を起動するには
+      <code>M-x run-scheme</code> を使用します。
+    </span>
+
+    <br><br>
+    <span class="en">
+      Commands:
+      Delete converts tabs to spaces as it moves back.
+      Blank lines separate paragraphs.  Semicolons start comments.
+    </span>
+    <span class="ja">コマンド:
+      Delete は戻るときにタブをスペースに変換します。
+      空行は段落を区切ります。セミコロンはコメントを開始します。
+    </span>
+
+    <table class="md">
+      <thead>
+        <tr>
+          <th align="left"><code>Key</code></th>
+          <th align="left"><code>Binding</code></th>
+        </tr>
+      </thead>
+      <tbody><tr>
+          <td align="left"><code>DEL</code></td>
+          <td align="left"><code>backward-delete-char-untabify</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-M-q</code></td>
+          <td align="left"><code>indent-sexp</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-M-q</code></td>
+          <td align="left">
+            <code>prog-indent-sexp</code> <br>
+            (this binding is currently shadowed)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <span class="en">
+      In addition to any hooks its parent mode <code>prog-mode</code>
+      might have run, this mode runs the hook <code>scheme-mode-hook</code>,
+      as the final or penultimate step during initialization.
+    </span>
+    <span class="ja">
+      親モードである <code>prog-mode</code> が実行したフックに加えて、
+      このモードは初期化の最終またはその直前のステップとして
+      <code>scheme-mode-hook</code> フックを実行します。
+    </span>
+
+    <br><br>
+    <span class="en">Global minor modes enabled:</span>
+    <span class="ja">有効なグローバルマイナーモード:</span>
+    <span>
+      <code>Auto-Encryption</code> <code>Blink-Cursor</code>
+      <code>Column-Number</code> <code>Desktop-Save</code>
+      <code>Electric-Indent</code> <code>File-Name-Shadow</code>
+      <code>Global-Eldoc</code> <code>Global-Font-Lock</code>
+      <code>Line-Number</code> <code>Show-Paren</code>
+      <code>Tooltip</code> <code>Transient-Mark</code>
+    </span>
+
+  </body>
+</html>

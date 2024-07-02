@@ -1,0 +1,11 @@
+/*  背景色=黄色、文字色=シアン、背景画像追加 */
+body {
+    background-color: #ffff00;
+    color: #00ffff;
+    background-image: url('a-picture.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: multiply;
+}

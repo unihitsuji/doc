@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tink-html-iframe 親</title>
+    <link rel="stylesheet" href="base.css">
+    <script src="base.js"></script>
+    <script>
+      function get_name(obj) {
+          if (obj.id) {
+              return obj.id;
+          } else if (obj.tagName) {
+              return obj.tagName;
+          } else {
+              return 'unknown'; } }
+
+      function display_factory(id) {
+          return (...xs) => {
+              let date = new Date().toLocaleString('ja');
+              let dest = document.getElementById(id).value;
+              if (dest) {
+                  let txar = document.getElementById(dest);
+                  txar.value += `${date}: `;
+                  txar.value += xs.join(" ");
+                  txar.value += "\n";
+              } else {
+                  console.log(`${date}: `, xs.join(" ")); } }; }
+
+      let display = display_factory('dest');
+
+      function ep_keydown(ev) {
+          display(`keydown .key = ${ev.key}`,
+                  `at .target = ${get_name(ev.target)}`,
+                  `.current = ${get_name(ev.currentTarget)}`,
+                  `\n    on ${ev.view.location.href}`); }
+
+      function ep_wrap(ev) {
+          // ev.target.tagName != 'TEXTAREA' で弾いても良い
+          if (ev.target.id != 'txa1') { ep_keydown(ev); } }
+
+      function ifrm_add_listener() {
+          console.log('init: ifrm_add_listener');
+          let ifrm = dom('ifrm1');
+          ifrm.contentWindow.addEventListener('keydown', ep_wrap);
+          console.log('done: ifrm_add_listener'); }
+
+      // iframe が異なるオリジンでも実行される
+      function ifrm_load() {
+          console.log('init: ifrm_load');
+          if ( origin('ifrm1') ) {
+              ifrm_add_listener();
+              console.log('done: ifrm_load');
+          } else {
+              console.log('done: ifrm_load due to different origin'); } }
+
+      function body_load() {
+          console.log('init: body_load');
+          document.body.addEventListener('keydown', ep_wrap);
+          let txar = document.getElementById('txa1');
+          txar.addEventListener('keydown', ep_wrap);
+          console.log('done: body_load'); }
+    </script>
+  </head>
+  <body onload="body_load()">
+    <div class="left">
+      <ul>
+        <li>iframe が同じオリジンのとき keydown イベントを検知したい！</li>
+        <li>iframe の親の BODY も keydown イベントを検知したい</li>
+        <li>iframe の親の TEXTAREA は keydown を検知させたくない<br>
+          =&gt; コレは無理な要求。<br>
+          TEXTAREA は keydown の後 keyup, input 等もあるし、<br>
+          入力によってテキストが変更されるデフォルト動作が必要になるので<br>
+          ev.preventDefault() させては いけない。<br>
+          イベントプロシージャ内で適切に分岐させるしかない。
+        </li>
+      </ul>
+      <div class="right">
+        <select id="dest">
+          <option value="">console.log</option>
+          <option value="txa1" selected>textarea</option>
+        </select>
+        <textarea id="txa1" cols="100" rows="10"></textarea>
+      </div>
+      <iframe id="ifrm1" onload="ifrm_load()"
+              src="child.html" width="700"></iframe>
+    </div>
+  </body>
+</html>

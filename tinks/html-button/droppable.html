@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tink-html-button/droppable</title>
+  </head>
+  <body>
+    <div>
+      <input id="tx1" type="text" value="input type=&quot;text&quot; でも">
+      <span>span でも</span>
+      <a href="https://wwww.google.com/">リンクでも</a>
+      <button id="bt1">droppable</button>
+      <script>
+        let bt = document.getElementById('bt1');
+        //  dragover イベントを以下のようにしないと drop イベントは発生しない
+        bt.addEventListener('dragover', (ev) => {
+            ev.preventDefault();
+            ev.dataTransfer.dropEffect = 'move';
+        });
+        //  drop イベントを受け取る
+        bt.addEventListener('drop', (ev) => {
+            ev.preventDefault();
+            alert(ev.dataTransfer.getData('text'));
+        });
+      </script>
+      ボタンにドロップできる
+    </div>
+    <hr>
+  </body>
+</html>

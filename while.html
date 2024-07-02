@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>while</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+    <link id="bgimgcss" rel="stylesheet" href="/images/city/night1.css">
+
+    <link rel="stylesheet" href="/highlightjs/styles/default.min.css">
+
+    <script src="/js/gebi.js"></script>
+    <script src="/js/attr.js"></script>
+    <script src="/js/prop.js"></script>
+    <script src="/js/css.js"></script>
+    <script src="/js/json.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/bgimg.js"></script>
+    <script src="/js/face_onload.js"></script>
+    <script src="/js/apply_css.js"></script>
+    <script src="/js/transparent.js"></script>
+    <script src="/js/go_home.js"></script>
+    <script src="/js/what_is.js"></script>
+    <script src="/js/reload.js"></script>
+    <script src="/js/add_event.js"></script>
+    <script src="/js/boss.js"></script>
+    <script src="/js/textedit.js"></script>
+    <script src="/js/enclose_body.js"></script>
+    <script src="/js/exec_code.js"></script>
+    <script src="/js/obj2clipboard.js"></script>
+    <script src="/js/droppable_button.js"></script>
+    <script src="/js/chap.js"></script>
+    <script src="/while.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script src="/highlightjs/highlight.min.js"></script>
+    <script src="/highlightjs/languages/bash.min.js"></script>
+    <script src="/highlightjs/languages/css.min.js"></script>
+    <script src="/highlightjs/languages/go.min.js"></script>
+    <script src="/highlightjs/languages/haskell.min.js"></script>
+    <script src="/highlightjs/languages/java.min.js"></script>
+    <script src="/highlightjs/languages/javascript.min.js"></script>
+    <script src="/highlightjs/languages/lisp.min.js"></script>
+    <script src="/highlightjs/languages/markdown.min.js"></script>
+    <script src="/highlightjs/languages/python.min.js"></script>
+    <script src="/highlightjs/languages/python-repl.min.js"></script>
+    <script src="/highlightjs/languages/ruby.min.js"></script>
+    <script src="/highlightjs/languages/scheme.min.js"></script>
+    <script src="/highlightjs/languages/shell.min.js"></script>
+    <script src="/highlightjs/languages/tcl.min.js"></script>
+    <script src="/highlightjs/languages/x86asm.min.js"></script>
+    <script src="/highlightjs/languages/xml.min.js"></script>
+  </head>
+  <body onload="face_onload(true); onload()">
+
+    <table>
+      <tr>
+        <td class="right middle">
+          <input id="there" type="text" size="50">
+          <button onclick="search_there()">検索</button>
+          <button onclick="go_there()">開く</button>
+          <select id="ifrm_hist" onchange="go_hist(this)">
+<option value="">off</option>
+<option value="https://www.tcl-lang.org/man/tcl8.6/UserCmd/tclsh.htm">
+  tclsh 原文
+</option>
+<option value="/tcl8.6/UserCmd/tclsh.htm">tclsh 和訳</option>
+<option value="https://www.tcl-lang.org/man/tcl8.6/UserCmd/wish.htm">
+  wish 原文
+</option>
+<option value="/tcl8.6/UserCmd/wish.htm">wish 和訳</option>
+<option value="https://www.tcl-lang.org/man/tcl8.6/TclCmd/tclvars.htm">
+  tclvars 原文
+</option>>
+<option value=""></option>
+<option value=""></option>
+<option value=""></option>
+<option value=""></option>
+          </select>
+          <button onclick="go_home('ifrm')">ホーム</button>
+        </td>
+        <td class="right middle">
+          <!-- ******* FACE START ********************* -->
+          <select id="bgimg" onchange="push_cookie(this, bgimg())">
+            <option value="">off</option>
+            <option value="/images/city/evening.css">- evening</option>
+            <option value="/images/city/freepik-rainy.css">rainy</option>
+            <option value="/images/city/morning.css">- moring</option>
+            <option value="/images/city/new-york1.css">- new-york1</option>
+            <option value="/images/city/new-york2.css">- new-york2</option>
+            <option value="/images/city/new-york3.css">- new-york3</option>
+            <option value="/images/city/night1.css">night1 screen</option>
+            <option value="/images/city/night2.css">- night2</option>
+            <option value="/images/city/pink.css">- pink</option>
+            <option value="/images/city/river-side1.css">- river-side1</option>
+            <option value="/images/city/river-side2.css">- river-side2</option>
+            <option value="/images/city/see-down.css">- see-down</option>
+            <option value="/images/city/sendai.css">sendai luminosity</option>
+            <option value="/images/city/shibuya.css">- shibuya</option>
+            <option value="/images/city/with-woods.css">woods diff</option>
+            <option value="/images/room/with-pc.css">with pc</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+          <select id="blend" onchange="push_cookie(this, blend)">
+            <option value="normal">normal</option>
+            <option value="multiply">multiply</option>
+            <option value="screen">screen</option>
+            <option value="overlay">overlay</option>
+            <option value="darken">darken</option>
+            <option value="lighten">lighten</option>
+            <option value="color-dodge">color-dodge</option>
+            <option value="color-burn">color-burn</option>
+            <option value="hard-light">hard-light</option>
+            <option value="soft-light">soft-light</option>
+            <option value="difference">difference</option>
+            <option value="exclusion">exclusion</option>
+            <option value="hue">hue</option>
+            <option value="saturation">saturation</option>
+            <option value="color">color</option>
+            <option value="luminosity">luminosity</option>
+          </select>
+          <select id="theme"
+                  onchange="push_cookie(this, theme())">
+            <option value="">off</option>
+            <option value="/css/dark.css">DARK</option>
+            <option value="/css/pink.css">PINK</option>
+          </select>
+          <!-- ******* FACE END ********************* -->
+        </td>
+        <td class="right middle">
+          <div id="menu" class="hide">
+            <select id="play_hist" class="hist" onchange="play_hist(this)">
+<option value="wide=YgPZp0piGPU">【さくらみこ】ウマ娘のライブを見て限界化するみこち【ホロライブ切り抜き】</option>
+<option value="wide=FNMXvXf1u8M">ホロライブ秋の大運動会‼【#ホロライブ運動会 / Minecraft】</option>
+<option value="wide=wks67WHSGDw">【 #ホロライブ大運動会2021 】ホロライブ集結‼秋のマイクラ運動会🏳 - 主催者視点【Minecraft/さくらみこ】</option>
+<option value="wide=-CzNxQIi87c">【 #ホロライブ運動会2022 】第三回‼秋のマイクラホロライブ大運動会🏳 - 主催者視点【 Minecraft/ホロライブ 】</option>
+<option value="wide=Nddp-ZlKZtI">【 #ホロライブ大運動会2023 】秋のマイクラ大運動会🏳 - 主催者視点【ホロライブ/さくらみこ/大神ミオ/大空スバル】</option>
+<option value="wide=kpjqHbtOadQ">【 GTA 企画 】今年最初のカオスな鬼ごっこで視聴者から逃げきれ！！！！！！！【ホロライブ/さくらみこ】</option>
+<option value="wide=EfPqqg8VxW4">【 GTA5 視聴者参加型】全力で●●！新検証企画を実行するにぇ！！！！！！！【ホロライブ/さくらみこ】</option>
+<option value="wide=x3ZNTaJgVlk">【突然ポル対談】さくらみこさんいらっしゃいませ【尾丸ポルカ/さくらみこ/ホロライブ】</option>
+<option value="vert=MGDFXSsQka8">【かわいい】まんまと罠にハマるみこち【さくらみこ/尾丸ポルカ/ホロライブ切り抜き】#shorts</option>
+<option value="wide=MO0gz82jGIE">【 誕生日カウントダウン】明日は生誕ライブ‼🎉誕生日みんなと迎えるにぇぇぇええ‼【ホロライブ/さくらみこ】</option>
+<option value="wide=h-nP2WdPMdM">【 キャプテン翼 】ふらの中入部編！！⚽完全初見のキャプテン翼 RISE OF NEW CHAMPIONS【ホロライブ/さくらみこ】</option>
+<option value="">------- short -------</option>
+<option value="vert=vzPRicPf9PY">さくらみこ赤ちゃん化計画W【sakuramiko/ホロライブ/切り抜き】#shorts</option>
+<option value="vert=qAZyMe5hQqg">35秒探偵さくらみこ『驚愕の犯人！？ この事件の真相は！？』</option>
+<option value="">------- temporary -------</option>
+<option value="wide=yuDFoKA4ggI">最近人間性を褒められることが増えてきたみこちの体調も含めた近況について【ホロライブ切り抜き】</option>
+<option value="wide=A_in3kEuvGQ">実家から帰ってきてちょっと寂しくなっていたみこちが配信してみて思ったこと【ホロライブ切り抜き】</option>
+<option value="wide=Bh3q8O3_kOc">いなくなったホロメンとの関係性や今の思いをいろんな形で表現してくれたホロメン【ホロライブ切り抜き】</option>
+<option value="wide=byeFj4dkFO4">細かい演出も35PとのプロレスもAIにはできないからみこちの銅像でも立てようかと考えたトロッコ問題 #ネタバレあり【ホロライブ切り抜き】</option>
+<option value="wide=9mFq8Y5Y3dw">みこちのみこちらしい優しさまとめ【ホロライブ切り抜き】</option>
+<option value="wide=V1AulJUqlFs">時々ねねちは天才なのかもしれないと思うことがある【ホロライブ切り抜き】</option>
+<option value="wide=ZNnZFV2pN2Y">おかゆがマインクラフトにハマるようになった理由が深い#ちょっといい話【ホロライブ切り抜き】</option>
+<option value="wide=aWKimo3ykSA">瞬時に出てくる卓越したワードセンスを見ていると、みこちって頭の回転早いよなぁと思ってしまったシーンまとめ【ホロライブ切り抜き】</option>
+<option value="wide=TmUpZpvK3Wc">みこちと行く！富士サファリパーク！！！【角巻わためのHave a nice day】#はばない</option>
+<option value="wide=P3rDTWrP5ks">2024-06-17【 NARUTO 】完全初見でNARUTO－ナルト－ 疾風伝 ナルティメットストーム３やるってばよ❕🍥【ホロライブ/さくらみこ】※ネタバレあり</option>
+<option value="wide=VhDeRcFwsHs">2024-06-18【 NARUTO 】完全初見でNARUTO－ナルト－ 疾風伝 ナルティメットストーム３やるってばよ❕🍥【ホロライブ/さくらみこ】※ネタバレあり</option>
+<option value="wide=eC-j8GwTLPo">2024-06-19【 NARUTO 】完全初見でNARUTO－ナルト－ 疾風伝 ナルティメットストーム３やるってばよ❕🍥【ホロライブ/さくらみこ】※ネタバレあり</option>
+<option value="wide=5WXDf1Cobr8">【 FCマリオ 】残機３で即終了するスーパーマリオブラザーズに挑戦だ‼【ホロライブ/さくらみこ】</option>
+<option value="wide=WrWqw4hcTg8">リベンジ【 FCマリオ 】ゲームオーバー３回で即終了するスーパーマリオブラザーズに挑戦だ‼【ホロライブ/さくらみこ】</option>
+<option value="wide=3ys_pDNiYc4">勝てる相手としてあくたんに召喚されるみこち【ホロライブ/さくらみこ/湊あくあ】</option>
+<option value="wide=co9fOcGHD5c">【コメ付き】1人分のカレーの作り方が一生分からないさくらみこ【ホロライブ/さくらみこ/切り抜き】 #さくらみこ</option>
+<option value="wide=jCtDOkWVPBQ">家族に食卓で自分の切り抜きをめっちゃ見られるみこち【さくらみこ ホロライブ 切り抜き】</option>
+<option value="wide=NeKFtCiKXNM">久々ARK、太鼓で新しい音が出せることに気づき、偶然エヴァBGMを再現するみこち【さくらみこ/ホロライブ/切り抜き】</option>
+<option value="wide=kOSD-kMdEM0">気合い100%でリズム天国をするみこちが可愛いすぎる【さくらみこ切り抜き/Sakura Miko Clips】【ホロライブ切り抜き】</option>
+<option value="wide=x0N6zTRNr1U">【ホロライブ】世界一信用できないみこちの「わがった」が面白過ぎる棒人間ゲームまとめ【切り抜き/さくらみこ】</option>
+<option value="wide=mGwtYqzfcME">【Minecraft】８番出口風のマイクラ世界！？！？！？！？！【＃にゃんぐみこーん】</option>
+<option value="wide=ebs5fuY8cpg">異次元の神キャラクリたちのまさかの姿に驚愕するみこちの面白ソウルキャリバーまとめ【 ホロライブ 切り抜き さくらみこ 】</option>
+<option value="wide=rsP3cHu5aj8">【 ムベンベラジオ | ホラゲ 】ぼくなつ風な可愛いゲームなのらね！Mbembe Radio【姫森ルーナ/ホロライブ】</option>
+<option value="wide=7CZr4P24byQ">最終回【 NARUTO 】完全初見でNARUTO－ナルト－ 疾風伝 ナルティメットストーム４やるってばよ❕🍥【ホロライブ/さくらみこ】※ネタバレあり</option>
+<option value="">------- not yet registered -------</option>
+            </select>
+            <button id="play_wide" data-vid="YgPZp0piGPU"
+                    onclick="play_wide()">ワイド</button>
+            <button id="play_vert" data-vid="vzPRicPf9PY"
+                    onclick="play_vert()">縦型</button>
+            <button id="play_list" onclick="play_list()">リスト</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="right bottom">
+          <iframe id="ifrm" onload="ifrm_onload(this)"
+                  src="memo.html" width="620" height="856"></iframe>
+        </td>
+        <td class="right bottom">
+          <button id="drop_test" onclick="chap('code')">ﾄﾞﾛｯﾌﾟ&amp;ﾃｽﾄ</button>
+          <select id="lang" onchange="push_cookie(this)">
+            <option value="markdown">markdown</option>
+            <option value="html">html</option>
+            <option value="javascript">javascript</option>
+            <option value="Javascript">javascript console.log</option>
+            <option value="gosh">scheme gauche</option>
+            <option value="python3">python3</option>
+            <option value="ruby">ruby</option>
+            <option value="tclsh">tcl</option>
+          </select>
+          <button onclick="exec_code()">実行</button>
+          <button onclick="save()">保存</button>
+          <button id="chap" onclick="chap()">CHAP</button>
+          <button onclick="clear_code()">クリア</button>
+          <button id="drop_code" onclick="drop_code(this)">コード</button>
+          <br>
+          <textarea id="code" name="code" cols="82" rows="31"></textarea>
+          <br>
+          <button onclick="clear_inp()">クリア</button>
+          <button id="drop_inp" onclick="click_drop(this)">標準入力</button>
+          <br>
+          <textarea id="inp" name="inp" cols="82" rows="10"></textarea>
+        </td>
+        <td class="right bottom">
+          <div>
+            <iframe id="wide" class="hide" width="480" height="270" src="https://www.youtube.com/embed/YgPZp0piGPU?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" ifrmerrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="vert" class="hide" width="152" height="270" src="https://www.youtube.com/embed/vzPRicPf9PY?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" ifrmerrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <button onclick="clear_out()">クリア</button>
+          <button id="drop_out" onclick="click_drop(this)">標準出力</button>
+          <br>
+          <textarea id="out" name="out" cols="100" rows="31"></textarea>
+          <br>
+          <button onclick="clear_err()">クリア</button>
+          <button id="drop_err" onclick="click_drop(this)">例外出力</button>
+          <br>
+          <textarea id="err" name="err" cols="100" rows="10"></textarea>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>

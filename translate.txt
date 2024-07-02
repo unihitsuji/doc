@@ -1,0 +1,24 @@
+/<var>env(HOME)</var>
+This environment variable, if set, gives the location of the directory considered to be the current user's home directory, and to which a call of <a href="../TclCmd/cd.htm">cd</a> without arguments or with just "~" as an argument will change into.
+Most platforms set this correctly by default; it does not normally need to be set by user code.
+
+/<var>env(TCL_LIBRARY)</var>
+If set, then it specifies the location of the directory containing library scripts (the value of this variable will be assigned to the <var>tcl_library</var> variable and therefore returned by the command <a href="../TclCmd/info.htm">info library</a>).
+If this variable is not set then a default value is used.
+
+Note that this environment variable should not normally be set.
+
+/<var>env(TCLLIBPATH)</var>
+If set, then it must contain a valid Tcl list giving directories to search during auto-load operations.
+Directories must be specified in Tcl format, using "/" as the path separator, regardless of platform.
+This variable is only used when initializing the <var>auto_path</var> variable.
+
+/<var>env(TCL_TZ)</var>, <var>env(TZ)</var>
+These specify the default timezone used for parsing and formatting times and dates in the <a href="../TclCmd/clock.htm">clock</a> command.
+On many platforms, the TZ environment variable is set up by the operating system.
+
+/<var>env(LC_ALL)</var>, <var>env(LC_MESSAGES)</var>, <var>env(LANG)</var>
+These environment variables are used by the <a href="../TclCmd/msgcat.htm">msgcat</a> package to determine what locale to format messages using.
+
+/<var>env(TCL_INTERP_DEBUG_FRAME)</var>
+If existing, it has the same effect as running <code><a href="../TclCmd/interp.htm">interp debug</a> {} -frame 1</code> as the very first command of each new Tcl interpreter.

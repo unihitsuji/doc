@@ -1,0 +1,88 @@
+.hist   { width: 350px; }
+.hide   { display: none; }
+
+.dangle { display: none;
+          margin: 3px;
+          margin-left: 20px;
+          padding: 5px; }
+
+.table  { display: table; }
+.inline { display: inline; }
+.look-around { display: inline; }
+
+.nowrap { white-space: nowrap; }
+.pre    { white-space: pre; }
+
+.right  { text-align: right; }
+.left   { text-align: left; }
+.center { text-align: center; }
+.top    { vertical-align: top; }
+.bottom { vertical-align: bottom; }
+.middle { vertical-align: middle; }
+
+.top-right-menu { position: fixed;
+                  top: 20px;
+                  right: 20px;
+                  padding: 10px;
+                  border-radius: 5px;
+                  -webkit-border-radius: 5px;
+                  -moz-border-radius: 5px; }
+
+body { font-size: inherit; line-height: 1.8; }
+
+td { vertical-align: top; }
+
+td.representive { width: 60%; }
+td.candidate    { width: 40%; }
+
+table { border-spacing: 0px; }
+
+.keybind td { border-collapse: collapse;
+              border: 1px solid;
+              padding: 5px;
+              line-height: 1.2;
+              font-size: small;
+              font-family: monospace; }
+
+iframe { border-style: none; }
+
+code       { font-size: madium; }
+
+pre > code { font-size: medium;
+             display: table;
+             padding: 3px;
+             margin: 2px;
+             line-height: 1.4; }
+
+dd { margin-inline-start: 20px; }
+
+dd > dl { margin-top: 2px; margin-bottom: 2px; }
+
+table.md td, table.md th { padding: 5px;
+                           border-width: medium;
+                           border-style: solid; }
+
+label { margin-left: 10px; margin-right: 5px; }
+
+textarea, input { font-size: medium;
+                  line-height: 1.4;
+                  font-family: monospace; }
+
+form { margin-bottom: 3px; }
+
+/* a の中に h1 h2 ... を入れるな */
+h1     { padding: 0px 8px 0px 8px;
+         margin:  2px 8px 2px 2px;
+         white-space: nowrap; }
+
+a      { padding: 0px 8px 0px 8px;
+         margin:  2px 2px 2px 2px;
+         white-space: nowrap;
+         text-decoration-line: none; }
+
+h1 > a { padding: 0px; margin:  0px; }
+h2 > a { padding: 0px; margin:  0px; }
+h3 > a { padding: 0px; margin:  0px; }
+h4 > a { padding: 0px; margin:  0px; }
+h5 > a { padding: 0px; margin:  0px; }
+h6 > a { padding: 0px; margin:  0px; }

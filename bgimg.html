@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>背景画像</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/gebi.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/bgimg-list.js"></script>
+    <style>
+      dl    { margin: 0px; }
+      dt    { font-weight: bold; }
+      dd    { line-height: 2;
+              margin: 0px 0px 10px 20px;
+              padding: 0px 5px 0px 5px; }
+      img   { width:  98%; }
+      dd + dd { color: rgb(127 127 255); background-color: rgb(127 255 255); }
+      span { padding-left: 5px;
+             padding-right: 5px;
+             border-radius: 5px 5px 5px 5px;
+             -webkit-border-radius: 5px 5px 5px 5px;
+             -moz-border-radius: 5px 5px 5px 5px;
+             color: rgb(0 0 223);                /* 青 */
+             background-color: rgb(223 95 191);  /* 紫 */
+           }
+      .img  { width:  55%; }
+    </style>
+  </head>
+  <body onload="onload()">
+
+    <table>
+
+      <tr>
+        <td class="img"><img src="images/city/evening.jpg"></td>
+        <td>
+          <a href="images/city/evening.css">evening</a>
+          <button onclick="">images/city/evening.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/freepik-rainy.jpg"></td>
+        <td>
+          <a href="images/city/freepik-rainy.css">rainy</a>
+          <button onclick="">images/city/freepik-rainy.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+              <span>normal</span>
+              <span>multiply</span>
+              <span>screen</span>
+              <span>overlay</span>
+              <span>lighten</span>
+              <span>color-dodge</span>
+              <span>hard-light</span>
+              <span>soft-light</span>
+              <span>difference</span>
+              <span>exclusion</span>
+              <span>color</span>
+              <span>luminosity</span>
+            </dd>
+            <dd>
+              <span>color-dodge</span>
+              <span>hard-light</span>
+              <span>color</span>
+              <span>luminosity</span>
+            </dd>
+            <dt>pink</dt>
+            <dd>
+              <span>normal</span>
+              <span>multiply</span>
+              <span>darken</span>
+              <span>color-burn</span>
+              <span>hard-light</span>
+              <span>difference</span>
+              <span>exclusion</span>
+              <span>luminosity</span>
+            </dd>
+            <dd>
+              <span>color-burn</span>
+              <span>hard-light</span>
+              <span>difference</span>
+              <span>exclusion</span>
+              <span>luminosity</span>
+            </dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/morning.jpg"></td>
+        <td>
+          <a href="images/city/morning.css">morning</a>
+          <button onclick="">images/city/morning.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/new-york1.jpg"></td>
+        <td>
+          <a href="images/city/new-york1.css">new-york1</a>
+          <button onclick="">images/city/new-york1.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/new-york2.jpg"></td>
+        <td>
+          <a href="images/city/new-york2.css">new-york2</a>
+          <button onclick="">images/city/new-york2.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/new-york3.jpg"></td>
+        <td>
+          <a href="images/city/new-york3.css">new-york3</a>
+          <button onclick="">images/city/new-york3.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/night1.jpg"></td>
+        <td>
+          <a href="images/city/night1.css">night1</a>
+          <button onclick="">images/city/night1.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+              <span>normal</span>
+              <span>screen</span>
+              <span>lighten</span>
+              <span>color-dodge</span>
+              <span>hard-light</span> 
+              <span>soft-light</span>
+              <span>difference</span>
+              <span>exclusion</span>
+              <span>luminosity</span>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+              <span>normal</span>
+              <span>multiply</span>
+              <span>darken</span>
+              <span>color-burn</span>
+              <span>hard-light</span>
+              <span>difference</span>
+              <span>luminosity</span>
+            </dd>
+            <dd>
+              <span>color-burn</span>
+              <span>luminosity</span>
+            </dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/night2.jpg"></td>
+        <td>
+          <a href="images/city/night2.css">night2</a>
+          <button onclick="">images/city/night2.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/pink.jpg"></td>
+        <td>
+          <a href="images/city/pink.css">pink</a>
+          <button onclick="">images/city/pink.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/river-side1.jpg"></td>
+        <td>
+          <a href="images/city/river-side1.css">river-side1</a>
+          <button onclick="">images/city/river-side1.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/river-side2.jpg"></td>
+        <td>
+          <a href="images/city/river-side2.css">river-side2</a>
+          <button onclick="">images/city/river-side2.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/see-down.jpg"></td>
+        <td>
+          <a href="images/city/see-down.css">see-down</a>
+          <button onclick="">images/city/see-down.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/sendai.jpg"></td>
+        <td>
+          <a href="images/city/sendai.css">sendai</a>
+          <button onclick="">images/city/sendai.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+              <span>normal</span>
+              <span>screen</span>
+              <span>overlay</span>
+              <span>darken</span>
+              <span>lighten</span>
+              <span>color-dodge</span>
+              <span>hard-light</span>
+              <span>soft-light</span>
+              <span>difference</span>
+              <span>exclusion</span>
+              <span>luminosity</span>
+            </dd>
+            <dd>
+              <span>luminosity</span>
+            </dd>
+            <dt>pink</dt>
+            <dd>
+              <span>normal</span>
+              <span>multiply</span>
+              <span>darken</span>
+              <span>color-burn</span>
+              <span>hard-light</span>
+              <span>difference</span>
+              <span>exclusion</span>
+            </dd>
+            <dd>
+              <span>color-burn</span>
+              <span>difference</span>
+              <span>exclusion</span>
+              <span>luminosity</span>
+            </dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/shibuya.jpg"></td>
+        <td>
+          <a href="images/city/shibuya.css">shibuya</a>
+          <button onclick="">images/city/shibuya.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td class="img"><img src="images/city/with-woods.jpg"></td>
+        <td>
+          <a href="images/city/with-woods.css">with-woods</a>
+          <button onclick="">images/city/with-woods.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+              <span>normal</span>
+              <span>multiply</span>
+              <span>screen</span>
+              <span>overlay</span>
+              <span>lighten</span>
+              <span>color-dodge</span>
+              <span>hard-light</span>
+              <span>soft-light</span>
+              <span>difference</span>
+              <span>exclusion</span>
+              <span>color</span>
+              <span>luminosity</span>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+              <span>normal</span>
+              <span>multiply</span>
+              <span>darken</span>
+              <span>color-burn</span>
+              <span>hard-light</span>
+              <span>difference</span>
+              <span>exclusion</span>
+              <span>luminosity</span>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+<!--
+      <tr>
+        <td class="img"><img src="images/city/.jpg"></td>
+        <td>
+          <a href="images/city/.css"></a>
+          <button onclick="">images/city/.css</button>
+          <dl>
+            <dt>dark</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+            <dt>pink</dt>
+            <dd>
+            </dd>
+            <dd></dd>
+          </dl>
+        </td>
+      </tr>
+-->
+    </table>
+  </body>
+</html>

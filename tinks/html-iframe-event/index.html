@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>tinks/html-iframe-event</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <script src="/js/console.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body onload="onload(event)">
+    <button id="bt1" onclick="button_onclick(event)">same origin</button>
+    <button id="bt2" onclick="button_onclick(event)">different origin</button>
+    <button id="bt3" onclick="button_onclick(event)">srcdoc foo</button>
+    <button id="bt4" onclick="button_onclick(event)">srcdoc bar</button>
+    <button id="restore" onclick="restore_console(event)">restore</button>
+    <button id="throw_error"
+            onclick="throw_error(event)">throw error</button>
+    <button id="promise_reject"
+            onclick="promise_reject(event)">promise reject</button>
+    <br>
+    source codes
+    <a href="index.txt">HTML</a>
+    <a href="index.js">Javascript</a>
+    <br>
+    <iframe id="iframe1" src="/index.html" onload="iframe_onload(event)"
+            width="550px" height="260px" ></iframe>
+    <br>
+    <textarea id="log" cols="80" rows="8"></textarea>
+    <br>
+    <textarea id="warn" cols="80" rows="8"></textarea>
+    <br>
+    <textarea id="error" cols="80" rows="8"></textarea>
+  </body>
+</html>

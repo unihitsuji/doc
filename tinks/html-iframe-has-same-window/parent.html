@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Page</title>
+</head>
+<body>
+    <iframe id="myIframe" src="child1.html" width="640" height="360"></iframe>
+    <button onclick="changeIframeSrc()">Change Iframe Src</button>
+
+    <script>
+        var iframe = document.getElementById('myIframe');
+        
+        console.log("Initial contentWindow:", iframe.contentWindow);
+        console.log("Initial contentDocument:", iframe.contentDocument);
+
+        function changeIframeSrc() {
+            iframe.src = 'child2.html';
+
+            iframe.onload = function() {
+                console.log("New contentWindow:", iframe.contentWindow);
+                console.log("New contentDocument:", iframe.contentDocument);
+
+                // Check if contentWindow is the same
+                console.log("Is contentWindow the same:", iframe.contentWindow === initialContentWindow);
+            };
+        }
+
+        var initialContentWindow = iframe.contentWindow;
+    </script>
+</body>
+</html>
+

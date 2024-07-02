@@ -1,0 +1,9 @@
+body.screen { background-color: black; color: yellow; }
+
+.star-wars { background: transparent;
+             width: 535px; height: 300px;
+             font-size: large;
+             text-align: center;
+             transform: perspective(300px) rotateX(50deg); }
+
+label { margin-left: 10px; margin-right: 5px; font-size: xx-small; }

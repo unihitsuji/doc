@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>memo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/gebi.js"></script>
+    <script src="/js/css.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/bgimg.js"></script>
+    <script src="/js/face_onload.js"></script>
+    <script src="/js/trim_code.js"></script>
+    <script src="/js/turn_next.js"></script>
+    <script src="/js/copy.js"></script>
+
+    <style>
+
+.foo    { display: none;
+          white-space: normal; }
+.dangle { display: none;
+          margin: 3px;
+          margin-left: 20px;
+          padding: 5px; }
+a { white-space: nowrap; }
+
+    </style>
+  </head>
+  <body onload="face_onload(); trim_code();">
+
+    <button onclick="turn_next(this)">／</button>
+    <div class="foo">
+      <a href="/">AAAAAAAAAAAAAAAAAAAAAAAAAA</a>
+      <a href="/">aaaaaaaaaaaaaa</a>
+      <a href="/">BBBBBBBBBBBBBBBBBBBBBBBBBB</a>
+      <a href="/">bbbbbbbbbbbbbb</a>
+      <a href="/">CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</a>
+    </div>
+
+    <hr>
+
+    <h2>分かったこと</h2>
+
+    <dl>
+      <dt>自作関数 turn_next(id_or_obj, val = 'block', empty = val)</dt>
+      <dd>
+        .style.display を turn させる対象(nextElementSibling) が<br>
+        ロード時に非表示なら turn_next(this)、<br>
+        ロード時に表示されるなら turn_next(this, 'block', 'none')<br>
+        するのが良い
+      </dd>
+    </ul>
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="a-base.css">
+    <script src="b-main.js"></script>
+  </head>
+  <body onload="onload()">
+    <a href="a-base.css">CSS</a>
+    <a href="b-main.txt">HTML</a>
+    <a href="b-main.js">javascript</a>
+    <form id="calculate" onsubmit="return false"
+          oninput="a.value = calculate(x.value, y.value)">
+      <input name="x" type="number" value="5">
+      +
+      <input name="y" type="number" value="3">
+      =
+      <output name="a"></output>
+    </form>
+  </body>
+</html>

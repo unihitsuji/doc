@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>with</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+    <script src="/js/gebi.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/css.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/bgimg.js"></script>
+    <script src="/js/face_onload.js"></script>
+    <script src="/js/apply_css.js"></script>
+    <script src="/js/transparent.js"></script>
+    <script src="/js/go_home.js"></script>
+    <script src="/js/what_is.js"></script>
+    <script src="/js/console.js"></script>
+    <script src="/js/deep_equal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="with.js"></script>
+  </head>
+  <body onload="face_onload(); onload(event)">
+    <table>
+      <tr>
+        <td class="bottom right">
+          <select id="urls1" onchange="select_onchange(event)">
+            <option value="/memo.html"></option>
+            <option value="/tcl8.6/">tcl8.6和訳</option>
+            <option value="/tips/emacs/MEMO.md">elisp MEMO</option>
+            <option value="/tips/emacs/README.html">elisp README</option>
+          </select>
+          <button id="site1" onclick="button_onclick(event)">URL</button>
+          <button id="html1" onclick="button_onclick(event)">HTML</button>
+          <button id="spld1" onclick="button_onclick(event)">RELOAD</button>
+          <button id="home1" onclick="button_onclick(event)">HOME</button><br>
+          <iframe id="ifrm1" src="/memo.html" width="560px" height="860px"
+                  onload="ifrm_onload(event)"></iframe>
+        </td>
+        <td class="bottom right">
+          <select id="urls2" onchange="select_onchange(event)">
+            <option value="/memo.html"></option>
+            <option value="/code.html">CODE</option>
+          </select>
+          <button id="site2" onclick="button_onclick(event)">URL</button>
+          <button id="html2" onclick="button_onclick(event)">HTML</button>
+          <button id="spld2" onclick="button_onclick(event)">RELOAD</button>
+          <button id="home2" onclick="button_onclick(event)">HOME</button><br>
+          <iframe id="ifrm2" src="/memo.html" width="560px" height="860px"
+                  onload="ifrm_onload(event)"></iframe>
+        </td>
+        <td class="bottom right">
+          <button onclick="check_history(event)">TEST</button>
+          <select id="urls3" onchange="select_onchange(event)">
+            <option value="/memo.html"></option>
+            <option value="https://www.tcl-lang.org/man/tcl8.6/">
+              tcl8.6</option>
+            <option value="/tips/emacs/29.3/elisp-ja.html#Top">
+              elisp29.3和訳ﾛｰｶﾙ</option>
+          </select>
+          <button id="site3" onclick="button_onclick(event)">URL</button>
+          <button id="html3" onclick="button_onclick(event)">HTML</button>
+          <button id="spld3" onclick="button_onclick(event)">RELOAD</button>
+          <button id="home3" onclick="button_onclick(event)">HOME</button><br>
+          <iframe id="ifrm3" src="/memo.html" width="740px" height="860px"
+                  onload="ifrm_onload(event)"></iframe>
+        </td>
+      </tr>
+    </table>
+  </body>
+</head>

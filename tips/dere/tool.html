@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>デレステ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+    <script src="/js/gebi.js"></script> <!-- tool.js が使用 -->
+    <script src="/js/css.js"></script>
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/bgimg.js"></script>
+    <script src="/js/face_onload.js"></script>
+    <script src="/js/turn_next.js"></script>
+    <script src="/js/turn_spec.js"></script>
+    <script src="tool.js"></script>
+  </head>
+  <body onload="face_onload(); onload();">
+    <div class="top-right-menu">
+      <output id="dere-tool-pin" class="hide"></output>
+      <button id="kill-pin" onclick="kill_pin()" class="hide">#</button>
+      <a href="/face.html">face</a>
+      <a href="#misc">いろいろ</a>
+      <a href="#units">ﾕﾆｯﾄ</a>
+      <a href="#infinity">Infinity</a>
+      <a href="#pictures">画像</a>
+    </div>
+
+    <h1>デレステ</h1>
+    <h2><a name="misc">いろいろ</a></h2>
+    <form onsubmit="return false"
+      oninput="para_sum.value = Number(vo.value) + Number(da.value) + Number(vi.value)">
+      <label for="vo">Vo</label>
+      <input type="number" name="vo" id="vo"
+             max="100000" min="0" value="21000"> +
+      <label for="da">Da</label>
+      <input type="number" name="da" id="da"
+             max="100000" min="0" value="21000"> +
+      <label for="vi">Vi</label>
+      <input type="number" name="vi" id="vi"
+             max="100000" min="0" value="21000"> =
+      <label for="para_sum">合計</label>
+      <output name="para_sum" id="para_sum">63000</output>
+    </form>
+    <form onsubmit="return false" oninput="when_hpfull()">
+      <label for="dere-tool-hpmax">ｽﾀﾐﾅ総数</label>
+      <input type="number" name="hpmax" id="dere-tool-hpmax"
+             max="200" min="40" value="165" onchange="push_cookie(this)"> -
+      <label for="hpnow">現在のｽﾀﾐﾅ</label>
+      <input type="number" name="hpnow" id="hpnow"
+             max="200" min="0" value="16"> =&gt;
+      <label for="hpfull">満ﾀﾝになる時刻</label>
+      <output id="hpfull"></output>
+      <button onclick="pin(`満ﾀﾝになる時刻 ${hpfull.value}`)">ﾋﾟﾝ留め</button>
+    </form>
+    <h2><a name="units">ユニット</a></h2>
+    <button onclick="turn_next(this,'table')">ｹﾞｽﾄ有り放置</button>
+    <span class="dangle">
+      <table>
+        <tr>
+          <td class="representive">
+            <img src="" width="95%">
+          </td>
+          <td class="candidate">
+            <img src="" width="95%">
+            <img src="" width="95%">
+            <img src="" width="95%">
+          </td>
+        </tr>
+      </table>
+    </span>
+    <button onclick="turn_next(this,'table')">ｹﾞｽﾄなし放置</button>
+    <span class="dangle">
+      <table>
+        <tr>
+          <td class="representive">
+            <img src="" width="95%">
+          </td>
+          <td class="candidate">
+            <img src="" width="95%">
+            <img src="" width="95%">
+            <img src="" width="95%">
+          </td>
+        </tr>
+      </table>
+    </span>
+    <button onclick="turn_next(this,'table')">所有ｱｲﾄﾞﾙ</button>
+    <span class="dangle">
+    </span>
+    <button onclick="turn_next(this,'table')">全ｱｲﾄﾞﾙ</button>
+    <span class="dangle">
+    </span>
+    <h2><a name="infinity">Infinity</a></h2>
+    <form onsubmit="infinity_allot(); return false">
+      <label for="lvsum">レベル合計</label>
+      <input type="text" id="lvsum" name="lvsum"
+             value="520/2" size="10"> =
+      <label for="lvmax">レベルMAX</label>
+      <input type="number" id="lvmax" name="lvmax"
+             max="32" min="8" value="30">
+      〜
+      <label for="lvmin">レベルMIN</label>
+      <input type="number" id="lvmin" name="lvmin"
+             max="32" min="8" value="20">
+      <input type="submit" value="放置">
+    </form>
+    <button onclick="turn_next(this,'table')">候補曲リスト</button>
+    <span class="dangle">
+      <table>
+        <tr>
+          <th>NOTES</th><th>COMBO</th><th>PG</th><th>SCORE</th>
+          <th>COST</th><th>SLV</th><th>TYPE</th><th>NAME</th>
+        </tr>
+      </table>
+    </span>
+    <button onclick="turn_next(this,'table')">結果</button>
+    <span class="dangle">
+      <table>
+        <tr>
+          <th>NOTES</th><th>COMBO</th><th>PG</th><th>SCORE</th>
+          <th>COST</th><th>SLV</th><th>TYPE</th><th>NAME</th>
+        </tr>
+      </table>
+    </span>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <h2>
+      <a name="pictures">画像</a>
+      <button onclick="turn_spec('#images')">#</button>
+    </h2>
+    <span id="images" class="dangle">
+      <a href="/images/dere/">画像ﾌｫﾙﾀﾞ</a>
+    </span>
+  </body>
+</head>
+

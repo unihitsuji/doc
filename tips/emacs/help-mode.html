@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>help-mode</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="basecss"  rel="stylesheet" href="/css/base.css">
+    <link id="themecss" rel="stylesheet" href="/css/dark.css">
+    <script src="/js/cookie.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/trim_code.js"></script>
+    <script src="/js/turn.js"></script>
+  </head>
+  <body onload="read_cookie('theme', theme()); trim_code();">
+    <div class="top-right-menu">
+      <a href="#meta-help">*MetaHelp*</a>
+      <a href="#quick-help">*Quick Help*</a>
+      <a href="#help-mode">*Help*</a>
+      <button onclick="turn(this, '.en', turn_by_tag)">英文</button>
+      <button onclick="turn(this, '.ja', turn_by_tag)">訳文</button>
+    </div>
+
+    <h1>help-mode</h1>
+
+    <a name="meta-help"><h2>All : C-h ? =&gt; *MetaHelp*</h2></a>
+
+    <table class="md">
+      <tr><th>Key</th><th>Help</th></tr>
+      <tr>
+        <td>m</td>
+        <td>
+          <div class="en">
+            Show help for current major and minor modes and their commands
+          </div>
+          <div class="ja">
+            現在のメジャーモードおよびマイナーモードとそのコマンドの
+            ヘルプを表示
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>b</td>
+        <td>
+          <div class="en">Show all key bindings</div>
+          <div class="ja">すべてのキーバインディングを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>k</td>
+        <td>
+          <div class="en">Show help for key</div>
+          <div class="ja">キーのヘルプを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>c</td>
+        <td>
+          <div class="en">Show help for key briefly</div>
+          <div class="ja">キーのヘルプを簡潔に表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>
+          <div class="en">Show which key runs a specific command</div>
+          <div class="ja">どのキーが特定のコマンドを実行するかを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>
+          <div class="en">
+            Search for commands (see also <code>M-x</code> apropos)
+          </div>
+          <div class="ja">
+            コマンドを検索 (<code>M-x</code> apropos も参照)
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>d</td>
+        <td>
+          <div class="en">
+            Search documentation of functions, variables, and other items
+          </div>
+          <div class="ja">
+            関数、変数、およびその他の項目のドキュメントを検索
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>
+          <div class="en">Show help for command</div>
+          <div class="ja">コマンドのヘルプを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>f</td>
+        <td>
+          <div class="en">Show help for function</div>
+          <div class="ja">関数のヘルプを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>v</td>
+        <td>
+          <div class="en">Show help for variable</div>
+          <div class="ja">変数のヘルプを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>o</td>
+        <td>
+          <div class="en">Show help for function or variable </div>
+          <div class="ja">関数または変数のヘルプを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>
+          <div class="en">Show Emacs manual</div>
+          <div class="ja">Emacsマニュアルを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>
+          <div class="en">Show Emacs manual section for command</div>
+          <div class="ja">コマンドのEmacsマニュアルセクションを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>K</td>
+        <td>
+          <div class="en">Show Emacs manual section for a key sequence</div>
+          <div class="ja">
+            キーシーケンスのEmacsマニュアルセクションを表示
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>i</td>
+        <td>
+          <div class="en">Show all installed manuals</div>
+          <div class="ja">
+            インストールされているすべてのマニュアルを表示
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>R</td>
+        <td>
+          <div class="en">Show a specific manual</div>
+          <div class="ja">特定のマニュアルを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>S</td>
+        <td>
+          <div class="en">Show description of symbol in pertinent manual</div>
+          <div class="ja">関連するマニュアルでシンボルの説明を表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-e</td>
+        <td>
+          <div class="en">Extending Emacs with external packages</div>
+          <div class="ja">外部パッケージでEmacsを拡張</div>
+        </td>
+      </tr>
+      <tr>
+        <td>p 小文字</td>
+        <td>
+          <div class="en">
+            Search for Emacs packages
+            (see also <code>M-x</code> list-packages)
+          </div>
+          <div class="ja">
+            Emacsパッケージを検索 (<code>M-x</code> list-packagesも参照)
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>P 大文字</td>
+        <td>
+          <div class="en">Describe a specific Emacs package</div>
+          <div class="ja">特定のEmacsパッケージを説明</div>
+        </td>
+      </tr>
+      <tr>
+        <td>t</td>
+        <td>
+          <div class="en">Start the Emacs tutorial</div>
+          <div class="ja">Emacsチュートリアルを開始</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-q</td>
+        <td>
+          <div class="en">Display the quick help buffer</div>
+          <div class="ja">クイックヘルプバッファを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>e</td>
+        <td>
+          <div class="en">Show recent messages (from echo area)</div>
+          <div class="ja">最近のメッセージを表示 (エコーエリアから)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>l</td>
+        <td>
+          <div class="en">Show last 300 input keystrokes (lossage)</div>
+          <div class="ja">最後の300キー入力を表示 (lossage)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>.</td>
+        <td>
+          <div class="en">Show local help at point</div>
+          <div class="ja">ポイントのローカルヘルプを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-a</td>
+        <td>
+          <div class="en">About Emacs</div>
+          <div class="ja">Emacsについて</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-f</td>
+        <td>
+          <div class="en">Emacs FAQ</div>
+          <div class="ja">Emacs FAQ</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-n</td>
+        <td>
+          <div class="en">News of recent changes</div>
+          <div class="ja">最近の変更のニュース</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-p</td>
+        <td>
+          <div class="en">Known problems</div>
+          <div class="ja">既知の問題</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-d</td>
+        <td>
+          <div class="en">Debugging Emacs</div>
+          <div class="ja">Emacsのデバッグ</div>
+        </td>
+      </tr>
+      <tr>
+        <td>g</td>
+        <td>
+          <div class="en">About the GNU project</div>
+          <div class="ja">GNUプロジェクトについて</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-c</td>
+        <td>
+          <div class="en">
+            Emacs copying permission (GNU General Public License)
+          </div>
+          <div class="ja">
+            Emacsのコピー許可 (GNU General Public License)
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-o</td>
+        <td>
+          <div class="en">
+            Emacs ordering and distribution information
+          </div>
+          <div class="ja">Emacsの注文と配布情報</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-m</td>
+        <td>
+          <div class="en">Order printed manuals</div>
+          <div class="ja">印刷されたマニュアルの注文</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-t</td>
+        <td>
+          <div class="en">Emacs TODO</div>
+          <div class="ja">Emacs TODO</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C-w</td>
+        <td>
+          <div class="en">Information on absence of warranty</div>
+          <div class="ja">保証の不在に関する情報</div>
+        </td>
+      </tr>
+      <tr>
+        <td>I</td>
+        <td>
+          <div class="en">Describe input method</div>
+          <div class="ja">入力方式の説明</div>
+        </td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>
+          <div class="en">Describe coding system</div>
+          <div class="ja">コーディングシステムの説明</div>
+        </td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>
+          <div class="en">Describe language environment</div>
+          <div class="ja">言語環境の説明</div>
+        </td>
+      </tr>
+      <tr>
+        <td>s 小文字</td>
+        <td>
+          <div class="en">Show current syntax table</div>
+          <div class="ja">現在の構文テーブルを表示</div>
+        </td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>
+          <div class="en">
+            Display the HELLO file illustrating various scripts
+          </div>
+          <div class="ja">様々なスクリプトを示すHELLOファイルを表示</div>
+        </td>
+      </tr>
+    </table>
+
+    <a name="quick-help"><h2>All : C-h C-q =&gt; *Quick Help*</h2></a>
+
+    <pre><code>
+File           Buffer             Window              Mark &amp; Kill          Projects
+C-x C-c exit   C-x k   kill       C-x 0 only other    C-SPC   mark         C-x p p switch
+C-x C-f find   C-x b   switch     C-x 1 only this     C-k     kill line    C-x p f find file
+C-x C-w write  M-g g   goto line  C-x 2 split vert.   C-w     kill region  C-x p g search
+C-x C-s save   C-x C-q read only  C-x 3 split horiz.  C-y     yank         C-x p r search &amp; replace
+C-x s   all                       C-x o other window  C-x C-x swap         C-x p c compile
+
+Misc.
+C-x u undo
+C-s   search
+C-r   reverse search
+M-%   search &amp; replace
+M-q   reformat
+    </code></pre>
+
+    <a name="help-mode"><h2>*Help* *Quick Help* : C-h m =&gt; *Help*</h2></a>
+
+    <span class="en">Minor modes enabled in this buffer:</span>
+    <span class="ja">このバッファで有効なマイナーモード:</span>
+    <br>
+    <code>Font-Lock</code> <code>Isearch-Fold-Quotes</code>
+    <br><br>
+
+    <span class="en">
+      The major mode is Help mode defined in <code>help-mode.el</code>:
+    </span>
+    <span class="ja">
+      メジャーモードは <code>help-mode.el</code> で定義された
+      <code>help-mode</code> です:
+    </span>
+    <br><br>
+
+    <span class="en">
+      Major mode for viewing help text and navigating references in it.
+    </span>
+    <span class="ja">
+      ヘルプテキストを表示し、その中の参照をナビゲートするための
+      メジャーモードです。
+    </span>
+    <span class="en">
+      Also see the <code>help-enable-variable-value-editing</code> variable.
+    </span>
+    <span class="ja">
+      また、<code>help-enable-variable-value-editing</code> 変数も
+      参照してください。
+    </span>
+    <br><br>
+
+    <table class="md">
+      <thead>
+        <tr>
+          <th align="left"><code>Key</code></th>
+          <th align="left"><code>Binding</code></th>
+        </tr>
+      </thead>
+      <tbody><tr>
+          <td align="left"><code>TAB</code></td>
+          <td align="left"><code>forward-button</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>SPC</code></td>
+          <td align="left"><code>scroll-up-command</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>-</code></td>
+          <td align="left"><code>negative-argument</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>0 .. 9</code></td>
+          <td align="left"><code>digit-argument</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>&lt;</code></td>
+          <td align="left"><code>beginning-of-buffer</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>&gt;</code></td>
+          <td align="left"><code>end-of-buffer</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>?</code></td>
+          <td align="left"><code>describe-mode</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>I</code></td>
+          <td align="left"><code>help-goto-lispref-info</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>c</code></td>
+          <td align="left"><code>help-customize</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>g</code></td>
+          <td align="left"><code>revert-buffer</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>h</code></td>
+          <td align="left"><code>describe-mode</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>i</code></td>
+          <td align="left"><code>help-goto-info</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>l</code></td>
+          <td align="left"><code>help-go-back</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>n</code></td>
+          <td align="left"><code>help-goto-next-page</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>p</code></td>
+          <td align="left"><code>help-goto-previous-page</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>q</code></td>
+          <td align="left"><code>quit-window</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>r</code></td>
+          <td align="left"><code>help-go-forward</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>s</code></td>
+          <td align="left"><code>help-view-source</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>DEL</code></td>
+          <td align="left"><code>scroll-down-command</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>S-SPC</code></td>
+          <td align="left"><code>scroll-down-command</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>&lt;XF86Back&gt;</code></td>
+          <td align="left"><code>help-go-back</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>&lt;XF86Forward&gt;</code></td>
+          <td align="left"><code>help-go-forward</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>&lt;backtab&gt;</code></td>
+          <td align="left"><code>backward-button</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-c C-b</code></td>
+          <td align="left"><code>help-go-back</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-c C-c</code></td>
+          <td align="left"><code>help-follow-symbol</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-c C-f</code></td>
+          <td align="left"><code>help-go-forward</code></td>
+        </tr>
+        <tr>
+          <td align="left"><code>C-M-i</code></td>
+          <td align="left"><code>backward-button</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+    <span class="en">
+      In addition to any hooks its parent mode <code>special-mode</code>
+      might have run, this mode runs the hook <code>help-mode-hook</code>,
+      as the final or penultimate step during initialization.
+    </span>
+    <span class="ja">
+      親モードである <code>special-mode</code> が実行したフックに加えて、
+      このモードは初期化の最後または最後から2番目のステップとして
+      <code>help-mode-hook</code> フックを実行します。
+    </span>
+    <br><br>
+
+    <span class="en">Global minor modes enabled:</span>
+    <span class="ja">有効なグローバルマイナーモード:</span>
+    <br>
+    <code>Auto-Encryption</code> <code>Blink-Cursor</code>
+    <code>Column-Number</code> <code>Desktop-Save</code>
+    <code>Electric-Indent</code> <code>File-Name-Shadow</code>
+    <code>Global-Eldoc</code> <code>Global-Font-Lock</code>
+    <code>Line-Number</code> <code>Show-Paren</code>
+    <code>Tooltip</code> <code>Transient-Mark</code></span>
+
+    </span>
+  </body>
+</html>

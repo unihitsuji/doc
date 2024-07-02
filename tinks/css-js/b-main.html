@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>特定のタグのスタイルを javascript で取得する</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="a-main.css">
+    <link rel="stylesheet" href="a-piyo.css">
+    <script src="/js/css.js"></script>
+    <script src="/js/what_is.js"></script>
+    <script src="b-main.js"></script>
+  </head>
+  <body>
+    <textarea id="out" cols="120" rows="10"></textarea>
+    <div>Hello</div>
+    <button onclick="print(css('div'))">div</button>
+    <br>
+    <span>World</span>
+    <button onclick="print(css('span'))">span</button>
+    <br>
+    <label>Good-bye</label>
+    <button onclick="print(css('label'))">label</button>
+    <br>
+    <label class="hoge">Human</label>
+    <button onclick="print(css('.hoge'))">.hoge</button>
+    <br>
+    <label class="piyo">Jupiter</label>
+    <button onclick="print(css('.piyo'))">.piyo</button>
+    <br>
+    本HTMLのソース(シンボリックリンク)
+    <a href="b-main.txt">b-main.html</a>
+    <br>
+    使用している CSS と javascript
+    <a href="a-main.css">a-main.css</a>
+    <a href="a-piyo.css">a-piyo.css</a>
+    <a href="b-main.js">b-main.js</a>
+    <a href="/js/css.js">css.js</a>
+    <a href="/js/what_is.js">what_is.js</a>
+    <div class="piyo">
+      本サンプルで、DOM要素ではなく、タグやクラスなどのセレクタに
+      設定されたスタイルとそのファイルを取得することができることが分かる
+    </div>
+  </html>
+</html>

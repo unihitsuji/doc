@@ -1,0 +1,52 @@
+/*
+.pic-background {
+    background-image: var(--pic-image-data, none);
+    background-size: cover;
+    background-position: center; }
+
+.pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 6rem;
+    box-sizing: border-box;
+    background-color: #fefefe; }
+*/
+
+.police-line::before {
+    position: absolute;
+    content: attr(data-title);
+    font-size: xx-large; /* 32PX */
+    color: #efbf2f;
+    background-color: #000000;
+    text-align: center;
+    left: 50%;
+    top: calc( 20dvh - 1.3em );
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.3em 1em 0.3em 1em;
+    transform: translateX(-50%);
+    border-radius: 1em;
+    box-shadow: 0.5em 0.5em 0.5em #000000; }
+
+.police-line {
+    position: relative;
+    padding: calc( 20dvh + 32px * 2 ) 1px 2em 1px;
+    text-align: center;
+    color: #000000;
+    background-color: #ffffff;
+    background-image: repeating-linear-gradient(45deg, #efbf2f 0 0.8em, #000000 0.8em 1.6em);
+    background-position: top;
+    background-size: 100% 20dvh;
+    background-repeat: no-repeat; }
+
+.police-line-tail {
+    position: relative;
+    background-image: repeating-linear-gradient(45deg, #efbf2f 0 0.8em, #000000 0.8em 1.6em);
+    height: 20vh;
+    background-position: top;
+    background-size: 100% 20dvh;
+    background-repeat: no-repeat; }
