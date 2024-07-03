@@ -1,0 +1,92 @@
+:is(.quiet, .slant, .twist)
+{ margin: 0px; padding: 0px; }
+
+:is(.quiet, .slant, .twist) > button
+{ display: block;
+  padding: 1px 5px 1px 5px;
+  margin: 1px 0px 1px 0px;
+  width: 200px; }
+
+.quiet > button { transform: none; }
+
+.slant > button { transform: skew(-45deg); }
+
+.twist > button { transform: skew(15deg, 15deg); }
+
+:is(.quiet, .slant, .twist) >
+   button
+{ margin-left:    0px; }
+
+:is(.quiet, .slant, .twist) >
+   button + button
+{ margin-left:  -23px; }
+
+:is(.quiet, .slant, .twist) >
+   button + button + button
+{ margin-left:  -46px; }
+
+:is(.quiet, .slant, .twist) >
+   button + button + button + button
+{ margin-left:  -69px; }
+
+:is(.quiet, .slant, .twist) >
+   button + button + button + button + button
+{ margin-left:  -92px; }
+
+:is(.quiet, .slant, .twist) >
+   button + button + button + button + button + button
+{ margin-left: -115px; }
+
+:is(.quiet, .slant, .twist) >
+   button + button + button + button + button + button + button
+{ margin-left: -138px; }
+
+:is(.quiet, .slant, .twist) >
+   button + button + button + button + button + button + button + button
+{ margin-left: -161px; }
+
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist)
+{ margin: 0px; padding: 0px; }
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist) >
+   li { list-style: none;
+        width: 200px;
+        padding: 1px 10px 1px 20px;
+        margin: 1px 0px 1px 0px;
+        transform: skew(-45deg);
+        transform: skew(15deg, 15deg);
+        //transform: none;
+        background-color: #ff00ff; }
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist) >
+   li
+{ margin-left:    0px; }
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist) >
+   li + li
+{ margin-left:  -28px; }
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist) >
+   li + li + li
+{ margin-left:  -56px; }
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist) >
+   li + li + li + li
+{ margin-left:  -84px; }
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist) >
+   li + li + li + li + li
+{ margin-left: -112px; }
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist) >
+   li + li + li + li + li + li
+{ margin-left:  -140px; }
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist) >
+   li + li + li + li + li + li + li
+{ margin-left:  -168px; }
+
+:is(ul.quiet, ol.quiet, ul.slant, ol.slant, ul.twist, ol.twist) >
+   li + li + li + li + li + li + li + li
+{ margin-left:  -196px; }

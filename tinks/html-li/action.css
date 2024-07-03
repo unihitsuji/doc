@@ -1,0 +1,29 @@
+button { display: block;
+         padding: 1px 5px 1px 5px;
+         margin: 1px 0px 1px 0px;
+         transform: skew(-45deg);
+         transform: skew(15deg, 15deg);
+         //transform: none;
+         width: 300px; }
+button                                              { margin-left: 115px; }
+button + button                                     { margin-left:  92px; }
+button + button + button                            { margin-left:  69px; }
+button + button + button + button                   { margin-left:  46px; }
+button + button + button + button + button          { margin-left:  23px; }
+button + button + button + button + button + button { margin-left:   0px; }
+
+ul { margin: 0px; }
+li { list-style: none;
+     width: 100px;
+     padding: 1px 10px 1px 20px;
+     margin: 1px 0px 1px 0px;
+     transform: skew(-45deg);
+     transform: skew(15deg, 15deg);
+     //transform: none;
+     background-color: #ff00ff; }
+li                          { margin-left: 140px; }
+li + li                     { margin-left: 112px; }
+li + li + li                { margin-left:  84px; }
+li + li + li + li           { margin-left:  56px; }
+li + li + li + li + li      { margin-left:  28px; }
+li + li + li + li + li + li { margin-left:   0px; }

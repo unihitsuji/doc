@@ -7,12 +7,16 @@ __youtube__.html
 images
 highlightjs
 post-message.txt
+tinks/template-tink.txt
+tinks/tink.txt
 tinks/css-blend/a-picture.jpg
 tinks/css-js/b-main.txt
 tinks/css-toys/police-line.txt
 tinks/css-toys/star-wars.txt
-tinks/html-iframe-event/index.txt
+tinks/html-iframe-event/html-iframe-event.txt
 tinks/html-output/b-main.txt
+tinks/js-load-order/child.txt
+tinks/js-load-order/parent.txt
 *~
 *#*
 .#*

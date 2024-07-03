@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cp template-tink.css  tink.css
+cp template-tink.html tink.html
+cp template-tink.js   tink.js
+if [ -L tink.txt ] ; then rm tink.txt; fi
+ln -s tink.html tink.txt

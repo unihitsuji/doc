@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>parent</title>
+    <script>
+
+function iframe_onload(ev)  { console.log(`iframe_onload: `); }
+function body_onload(ev)    { console.log(`body_onload: `); }
+function content_onload(ev) { console.log(`content_onload: `); }
+
+addEventListener( 'DOMContentLoaded', content_onload );
+
+    </script>
+  </head>
+  <body onload="body_onload(event)">
+
+    <h1>load イベントの実行順</h1>
+
+    <dl>
+      <li>
+        <a href="parent.txt">parent.html</a>
+        <a href="child.txt">child.html</a>
+      </li>
+      <li>
+        DOMContentLoaded が最初に発生することが保証されており
+        content_onload が最初に実行される
+      </li>
+      <li>
+        body_onload と iframe_onload の実行順は保証されないが、
+        多くの場合、iframe_onload のほうが先に実行される
+      </li>
+    </dl>
+
+    <div>parent has child in iframe</div>
+
+    <iframe id="ifrm" src="child.html" width="300" height="200"
+            onload="iframe_onload(event)"></iframe>
+
+  </body>
+</html>

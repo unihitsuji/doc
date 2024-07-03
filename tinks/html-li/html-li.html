@@ -1,0 +1,61 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>斜めな li</title>
+    <style>
+      .width300 { width: 300px; background-color: #ffcfcf; }
+      .width600 { width: 600px; background-color: #cfcfff; }
+    </style>
+    <link rel="stylesheet" href="/action/action.css">
+    <script src="/action/action.js"></script>
+    <script>
+
+      function button_onclick(ev) {
+          twist_kp_spin(ev.target, twist_to_slant, slant_to_twist);
+          //random_action(ev.target);
+          shut_formation(ev.target);
+          console.log(`button_onclick: `); }
+
+      function li_onclick(ev) {
+          random_action(ev.target);
+          console.log(`li_onclick: `); }
+
+      function body_onload(ev) {
+          let lis = document.getElementsByTagName('li');
+          for (let x of Array.from(lis) )
+              x.addEventListener('click', li_onclick);
+          let bts = document.getElementsByTagName('button');
+          for (let x of Array.from(bts) )
+              x.addEventListener('click', button_onclick); }
+    </script>
+  </head>
+  <body onload="body_onload(event)">
+    <table>
+      <tr>
+        <td class="width300">
+          Hello
+        </td>
+        <td class="width600">
+          <ul class="slant">
+            <li><a href="">FOO</a></li>
+            <li>BAR</li>
+            <li>BAZ</li>
+            <li>HOGE</li>
+            <li>FUGA</li>
+            <li>PIYO</li>
+          </ul>
+          <span class="twist">
+            <a href="">XXXXXXXXXXXXXXX</a>
+            <button>AAAAAAAAAAAAA</button>
+            <button>BBBBBBBBBBBBB</button>
+            <button>CCCCCCCCCCCCC</button>
+            <button>DDDDDDDDDDDDD</button>
+            <button>EEEEEEEEEEEEE</button>
+            <button>EEEEEEEEEEEEE</button>
+            <button>EEEEEEEEEEEEE</button>
+            <button>EEEEEEEEEEEEE</button>
+          </span>
+        </td>
+    </table>
+  </body>
+</html>
